@@ -1,11 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Futurr</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  <!-- <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
+    }
+  </script> -->
+  <title>Futurr</title>
 </head>
+
 <body>
-    
+  <main class="bg-bisque h-[100vh] w-[100vw]">
+
+
+    <!-- <section class="navBar flex justify-between px-6 xl:px-10 py-5 bg-pink-400">
+      <div class="w-[60%] flex items-center gap-3 xl:gap-4">
+        <img src="./assets/png/logo1.png" alt="" class="h-[30px]">
+        <button>Rankings</button>
+        <button>BookMarks</button>
+        <button>Categories</button>
+        <button>GPT Plugins</button>
+        <button>Resources</button>
+        <button>Subscribe</button>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="flex flex-row gap-3">
+          <button class="flex items-center px-2 py-2 rounded-[50px] border-[#D9D9D9] bg-white">
+            <img src="./assets/png/google-icon.png" alt="" class="w-[20px]">
+            <p>Sign in with Google</p>
+          </button>
+          <button class="px-2 py-2 rounded-[50px] border-[#D9D9D9] text-white bg-black">
+            Submit Resources
+          </button>
+        </div>
+        <div class="flex flex-col xl:flex-row gap-3">
+          <button class="flex items-center px-2 py-2 rounded-[50px] border-[#D9D9D9] bg-white">
+            <img src="./assets/png/moon-icon.png" alt="" class="w-[20px]">
+          </button>
+          <button class="h-[35px] w-[35px] rounded-[50px] border-[#D9D9D9] bg-white">
+            <p>EN</p>
+          </button>
+        </div>
+        </div>
+    </section> -->
+
+
+    <nav class="navbar navbar-expand-xl ">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="./assets//png/logo1.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+          aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul class="navbar-nav me-auto my-2 my-lg-0" style="--bs-scroll-height: 100px;">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Rankings</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">BookMarks</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Categories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">GPT Plugins</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Resources
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">News</a></li>
+                <li><a class="dropdown-item" href="#">AI Prompts</a></li>
+                <li><a class="dropdown-item" href="#">AI Jobs</a></li>
+                <li><a class="dropdown-item" href="#">Events</a></li>
+                <li><a class="dropdown-item" href="#">Glossary</a></li>
+                <li><a class="dropdown-item" href="#">FAQ</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Subscribe</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav action-section">
+            <li class="nav-item">
+              <a href="" class="action-btn">
+                <img src="./assets/png/google-icon.png" alt="">
+                <p>Sign in with Google</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="action-btn action-btn-2">
+                <p>Submit Resources</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="action-btn round">
+                <img src="./assets/png/moon-icon.png" alt="">
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="action-btn round2">
+                EN
+              </a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="container home-banner">
+      <div class="home-banner-top">
+        <h1>Discover the latest and most powerful AI resources in one place.</h1>
+        <h6>We curate, review, and AI resources, making your <br /> selection process effortless.</h6>
+      </div>
+      <div class="home-banner-bottom row row-cols-2">
+        <div class="col">
+          <div class="row">
+            <div class="col col-3">
+              <div class="figure" >
+                <img src="./assets/png/banner-icon1.png">
+              </div>
+            </div>
+            <div class="col col-9 text-block">
+              <h2>Explore the Universe of AI:</h2>
+              <p>
+                Dive into our comprehensive hub and navigate through a curated collection of AI tools, products, and
+                resources tailored for developers, businesses, and AI enthusiasts.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="row">
+            <div class="col col-3">
+              <div class="figure">
+                <img src="./assets/png/banner-icon2.png" alt="">
+              </div>
+            </div>
+            <div class="col col-9 text-block">
+              <h2>Explore the Universe of AI:</h2>
+              <p>
+                Dive into our comprehensive hub and navigate through a curated collection of AI tools, products, and
+                resources tailored for developers, businesses, and AI enthusiasts.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+  </main>
+
+  <script src="./js/bootstrap.min.js"></script>
+
+  <!-- <script src="./js/bootstrap.bundle.min.js"></script> -->
 </body>
+
 </html>
