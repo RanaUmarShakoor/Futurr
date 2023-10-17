@@ -1,3 +1,13 @@
+$("#navbar-dropdown-button").on("click", function(){
+    if( $('#navbar-dropdown').css("display") === "none" ){
+        $("#navbar-dropdown").css("display", "block");
+        // $("#navbar-dropdown").css("position", "absolute");
+    }
+    else{
+        $("#navbar-dropdown").css("display", "none");
+    }
+})
+
 let dropdownNavbarStatus = false;
 $("#dropdownNavbarLink").on("click", function(){
     if(!dropdownNavbarStatus){
@@ -42,7 +52,6 @@ $("#dropdownPricingButton").on("click", function(){
         $("#dropdownPricing").css("display", "none");
     }
 })
-
 
 
   $(document).ready(function(){
