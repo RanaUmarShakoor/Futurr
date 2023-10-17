@@ -1,0 +1,133 @@
+[
+    {
+        "rank": 1,
+        "title": "FutureTools.io",
+        "desc": "General writing platform",
+        "price": 0,
+        "is_premium": true,
+        "is_verified": true,
+        "likes": 221,
+        "photo_url": "./assets/png/small-card-img-4.png"
+    },
+    {
+        "rank": 2,
+        "title": "ChatGPT",
+        "desc": "General writing platform",
+        "price": "12.29",
+        "is_premium": true,
+        "is_verified": false,
+        "likes": 221,
+        "photo_url": "./assets/png/small-card-img-5.png"
+    },
+    {
+        "rank": 3,
+        "title": "FutureTools.io",
+        "desc": "General writing platform",
+        "price": "12.29",
+        "is_premium": true,
+        "is_verified": true,
+        "likes": 221,
+        "photo_url": "./assets/png/small-card-img-6.png"
+    },
+    {
+        "rank": 4,
+        "title": "FutureTools.io",
+        "desc": "General writing platform",
+        "price": "12.29",
+        "is_premium": true,
+        "is_verified": true,
+        "likes": 221,
+        "photo_url": "./assets/png/small-card-img-6.png"
+    },
+    {
+        "rank": 5,
+        "title": "FutureTools.io",
+        "desc": "General writing platform",
+        "price": 0,
+        "is_premium": true,
+        "is_verified": true,
+        "likes": 221,
+        "photo_url": "./assets/png/small-card-img-5.png"
+    },
+    {
+        "rank": 6,
+        "title": "FutureTools.io",
+        "desc": "General writing platform",
+        "price": 0,
+        "is_premium": true,
+        "is_verified": true,
+        "likes": 221,
+        "photo_url": "./assets/png/small-card-img-5.png"
+    },
+    {
+        "rank": 7,
+        "title": "FutureTools.io",
+        "desc": "General writing platform",
+        "price": 0,
+        "is_premium": true,
+        "is_verified": true,
+        "likes": 221,
+        "photo_url": "./assets/png/small-card-img-5.png"
+    },
+    {
+        "rank": 8,
+        "title": "FutureTools.io",
+        "desc": "General writing platform",
+        "price": 0,
+        "is_premium": true,
+        "is_verified": true,
+        "likes": 221,
+        "photo_url": "./assets/png/small-card-img-4.png"
+    },
+
+    {
+        "rank": 9,
+        "title": "FutureTools.io",
+        "desc": "General writing platform",
+        "price": 0,
+        "is_premium": true,
+        "is_verified": true,
+        "likes": 221,
+        "photo_url": "./assets/png/small-card-img-4.png"
+    },
+    {
+        "rank": 10,
+        "title": "FutureTools.io",
+        "desc": "General writing platform",
+        "price": 0,
+        "is_premium": true,
+        "is_verified": true,
+        "likes": 221,
+        "photo_url": "./assets/png/small-card-img-4.png"
+    },
+    {
+        "rank": 11,
+        "title": "FutureTools.io",
+        "desc": "General writing platform",
+        "price": 0,
+        "is_premium": true,
+        "is_verified": true,
+        "likes": 221,
+        "photo_url": "./assets/png/small-card-img-4.png"
+    },
+    {
+        "rank": 12,
+        "title": "FutureTools.io",
+        "desc": "General writing platform",
+        "price": 0,
+        "is_premium": true,
+        "is_verified": true,
+        "likes": 221,
+        "photo_url": "./assets/png/small-card-img-4.png"
+    },
+    {
+        "rank": 13,
+        "title": "FutureTools.io",
+        "desc": "General writing platform",
+        "price": 0,
+        "is_premium": true,
+        "is_verified": true,
+        "likes": 221,
+        "photo_url": "./assets/png/small-card-img-4.png"
+    }
+]

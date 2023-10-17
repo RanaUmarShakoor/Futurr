@@ -1,0 +1,112 @@
+[
+    {
+        "title": "TheToolBus",
+        "desc": "AssetsAI is an AI-powered tool that offers bespoke game assets in a variety...",
+        "price": "12.29",
+        "is_featured": true,
+        "is_premium": true,
+        "is_verified": true,
+        "likes": 221,
+        "tags": [ "website", "AI Assistant", "Development" ],
+        "photo_url": "./assets/png/card-img-1.png"
+    },
+    {
+        "title": "AssetsAI",
+        "desc": "AssetsAI is an AI-powered tool that offers bespoke game assets in a variety...",
+        "price": "free",
+        "is_featured": false,
+        "is_premium": true,
+        "is_verified": false,
+        "likes": 221,
+        "tags": [ "website", "AI Assistant", "Development" ],
+        "photo_url": "./assets/png/card-img-2.png"
+    },
+    {
+        "title": "Chatbase",
+        "desc": "AssetsAI is an AI-powered tool that offers bespoke game assets in a variety...",
+        "price": "12.29",
+        "is_featured": false,
+        "is_premium": true,
+        "is_verified": true,
+        "likes": 11,
+        "tags": [ "website", "AI Assistant", "Development" ],
+        "photo_url": "./assets/png/card-img-3.png"
+    },
+    {
+        "title": "Tooly",
+        "desc": "AssetsAI is an AI-powered tool that offers bespoke game assets in a variety...",
+        "price": "12.29",
+        "is_featured": true,
+        "is_premium": true,
+        "is_verified": true,
+        "likes": 221,
+        "tags": [ "website", "AI Assistant", "Development" ],
+        "photo_url": "./assets/png/card-img-1.png"
+    },
+    {
+        "title": "ChatGPT",
+        "desc": "AssetsAI is an AI-powered tool that offers bespoke game assets in a variety...",
+        "price": "12.29",
+        "is_featured": true,
+        "is_premium": true,
+        "is_verified": true,
+        "likes": 221,
+        "tags": [ "website", "AI Assistant", "Development" ],
+        "photo_url": "./assets/png/card-img-1.png"
+    },
+    {
+        "title": "Era59",
+        "desc": "AssetsAI is an AI-powered tool that offers bespoke game assets in a variety...",
+        "price": "12.29",
+        "is_featured": true,
+        "is_premium": true,
+        "is_verified": true,
+        "likes": 221,
+        "tags": [ "website", "AI Assistant", "Development" ],
+        "photo_url": "./assets/png/card-img-1.png"
+    },
+    {
+        "title": "Chatbase",
+        "desc": "AssetsAI is an AI-powered tool that offers bespoke game assets in a variety...",
+        "price": "12.29",
+        "is_featured": false,
+        "is_premium": true,
+        "is_verified": true,
+        "likes": 11,
+        "tags": [ "website", "AI Assistant", "Development" ],
+        "photo_url": "./assets/png/card-img-3.png"
+    },
+    {
+        "title": "Tooly",
+        "desc": "AssetsAI is an AI-powered tool that offers bespoke game assets in a variety...",
+        "price": "12.29",
+        "is_featured": true,
+        "is_premium": true,
+        "is_verified": true,
+        "likes": 221,
+        "tags": [ "website", "AI Assistant", "Development" ],
+        "photo_url": "./assets/png/card-img-1.png"
+    },
+    {
+        "title": "ChatGPT",
+        "desc": "AssetsAI is an AI-powered tool that offers bespoke game assets in a variety...",
+        "price": "12.29",
+        "is_featured": true,
+        "is_premium": true,
+        "is_verified": true,
+        "likes": 221,
+        "tags": [ "website", "AI Assistant", "Development" ],
+        "photo_url": "./assets/png/card-img-1.png"
+    },
+    {
+        "title": "Era59",
+        "desc": "AssetsAI is an AI-powered tool that offers bespoke game assets in a variety...",
+        "price": "12.29",
+        "is_featured": true,
+        "is_premium": true,
+        "is_verified": true,
+        "likes": 221,
+        "tags": [ "website", "AI Assistant", "Development" ],
+        "photo_url": "./assets/png/card-img-1.png"
+    }
+]
