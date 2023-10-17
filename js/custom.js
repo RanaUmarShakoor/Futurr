@@ -12,7 +12,7 @@ let dropdownNavbarStatus = false;
 $("#dropdownNavbarLink").on("click", function(){
     if(!dropdownNavbarStatus){
         $("#dropdownNavbar").css("display", "block");
-        $("#dropdownNavbar").css("position", "absolute");
+        // $("#dropdownNavbar").css("position", "absolute");
         dropdownNavbarStatus = true;
     }
     else{
@@ -51,6 +51,44 @@ $("#dropdownPricingButton").on("click", function(){
     else{
         $("#dropdownPricing").css("display", "none");
     }
+})
+
+$("#resourceDropdownButton").on("click", function(){
+    if( $('#resourceDropdown').css("display") === "none" ){
+        $("#resourceDropdown").css("display", "block");
+        $("#resourceDropdown").css("position", "absolute");
+    }
+    else{
+        $("#resourceDropdown").css("display", "none");
+    }
+})
+
+
+// Modals 
+$("#signInButton").on("click", function(){
+    $("#signInModal").css("display", "block");
+})
+
+$(".modalCloseButton").on("click", function(){
+    $(".staticModal").css("display", "none");
+})
+
+$("#signUpModalLink").on("click", function(){
+    $("#signInModal").css("display", "none");
+    $("#signUpModal").css("display", "block");
+})
+
+$("#signInModalLink").on("click", function(){
+    $("#signUpModal").css("display", "none");
+    $("#signInModal").css("display", "block");
+})
+
+$("#submitResourcesButton").on("click", function(){
+    $("#submitResourcesModal").css("display", "block");
+})
+
+$("#returnHomeButton").on("click", function(){
+    $(".staticModal").css("display", "none");
 })
 
 
