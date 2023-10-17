@@ -70,7 +70,7 @@ function display(card) {
   let tagsMarkup = card.tags.map(
     (tag) => `
         <p
-            class="p-2 text-xs lg:text-sm border-[1px] border-[#D9D9D9] rounded-[30px] hover:bg-black hover:text-white"
+            class="p-1 text-xs xl:text-sm border-[1px] border-[#D9D9D9] rounded-[30px] hover:bg-black hover:text-white"
         >
             #${tag}
         </p>`
@@ -150,7 +150,7 @@ function displayCard2(card) {
   let tagsMarkup = card.tags.map(
     (tag) => `
         <p
-            class="p-2 text-xs lg:text-sm border-[1px] border-[#D9D9D9] rounded-[30px] hover:bg-black hover:text-white"
+            class="p-1 text-xs xl:text-sm border-[1px] border-[#D9D9D9] rounded-[30px] hover:bg-black hover:text-white"
         >
             #${tag}
         </p>`
