@@ -4,7 +4,7 @@ function onDataReceived(data) {
   // $("#trendingToolsCarousel").html("");
   for (let i = 0; i < data.length; ++i) {
     let card = data[i];
-    let content = display(card);
+    let content = displayCard1(card);
     $("#trendingToolsCarousel")
       .owlCarousel()
       .trigger("add.owl.carousel", [jQuery(content)])
@@ -61,25 +61,35 @@ function onData5Received(data) {
   }
 }
 
-function display(card) {
+function displayCard1(card) {
   let priceM = "";
   if (card.price === "free") priceM = "Free";
   else
-    priceM = `${card.price} <span class="text-[10px] font-normal">per/mo</span>`;
+    priceM = `$${card.price} <span class="text-[10px] font-normal">per/mo</span>`;
 
-  let tagsMarkup = card.tags.map(
-    (tag) => `
-        <p
-            class="p-1 text-xs xl:text-sm border-[1px] border-[#D9D9D9] rounded-[30px] hover:bg-black hover:text-white"
-        >
-            #${tag}
-        </p>`
-  );
+  let tagsMarkup = "";
+
+  for (let i = 0; i < card.tags.length; i++) {
+    tagsMarkup += `
+    <p
+        class="p-[4px] xl:p-[8px] text-[11px] xl:text-xs border-[1px] border-[#D9D9D9] rounded-[30px] hover:bg-black hover:text-white"
+    >
+        #${card.tags[i]}
+    </p>`;
+  }
+  // card.tags.map(
+  //   (tag) => `
+  //       <p
+  //           class="p-1 text-xs xl:text-sm border-[1px] border-[#D9D9D9] rounded-[30px] hover:bg-black hover:text-white"
+  //       >
+  //           #${tag}
+  //       </p>`
+  // );
 
   let premiumMarkup = `
-<div class="h-[42px] px-[15px] py-[8px] text-[15px] border-[1px] border-[#D9D9D9] rounded-[8px]">
-Premium
-</div>`;
+  <div class="h-[34px] xl:h-[42px] px-3 xl:px-[15px] py-1 xl:py-[8px] text-[15px] border-[1px] border-[#D9D9D9] rounded-[8px]">
+  Premium
+  </div>`;
 
   let markup = `
     <div class="card col-span-1 flex flex-col border-[1px] border-[#D9D9D9] rounded-[20px] shadow-lg">
@@ -87,17 +97,17 @@ Premium
       <img src="${card.photo_url}" alt="">
       ${
         card.is_featured
-          ? '<article class="absolute top-[10px] left-[10px] px-[15px] py-[8px] text-[15px] border-[1px] border-white rounded-[10px] text-white bg-[#FFFFFF33]">Featured</article>'
+          ? '<article class="absolute top-[10px] left-[10px] px-[10px] xl:px-[15px] py-[5px] xl:py-[8px] text-[13px] xl:text-[15px] border-[1px] border-white rounded-[10px] text-white bg-[#FFFFFF33]">Featured</article>'
           : ""
       }
-      <article class="absolute bottom-[10px] right-[10px] p-2 text-base font-bold rounded-[10px] text-black bg-white">${priceM}</article>
+      <article class="absolute bottom-[10px] right-[10px] px-[10px] xl:px-[15px] py-[5px] xl:py-[8px] text-[13px] xl:text-[15px] font-bold rounded-[10px] text-black bg-white">${priceM}</article>
     </div>
     <div class="card-body flex flex-col gap-3 px-3 py-3">
       <div class="card-actions flex justify-between">
         ${card.is_premium ? premiumMarkup : ""}
         <div class="flex gap-2">
           <button
-            class="h-[42px] w-[42px] flex items-center justify-center border-[1px] border-[#D9D9D9] rounded-[8px]">
+            class="h-[34px] xl:h-[42px] w-[42px] flex items-center justify-center border-[1px] border-[#D9D9D9] rounded-[8px]">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" fill="none">
               <path
                 d="M0.84544 0H12.6816C13.1485 0 13.527 0.3731 13.527 0.833333V16.7861C13.527 17.0162 13.3377 17.2028 13.1043 17.2028C13.0249 17.2028 12.9471 17.1807 12.8798 17.1391L6.76352 13.3594L0.64726 17.1391C0.449461 17.2613 0.188584 17.2024 0.064566 17.0074C0.0223786 16.9411 0 16.8644 0 16.7861V0.833333C0 0.3731 0.37852 0 0.84544 0ZM11.8362 1.66667H1.69088V14.527L6.76352 11.3923L11.8362 14.527V1.66667Z"
@@ -105,7 +115,7 @@ Premium
             </svg>
           </button>
           <button
-            class="h-[42px] flex items-center justify-center gap-1 px-2 border-[1px] border-[#D9D9D9] rounded-[8px]">
+            class="h-[34px] xl:h-[42px] flex items-center justify-center gap-1 px-2 border-[1px] border-[#D9D9D9] rounded-[8px]">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
               <path
                 d="M13.7503 2.5C16.2817 2.5 18.3337 4.58333 18.3337 7.5C18.3337 13.3333 12.0837 16.6667 10.0003 17.9167C7.91699 16.6667 1.66699 13.3333 1.66699 7.5C1.66699 4.58333 3.75033 2.5 6.25033 2.5C7.8003 2.5 9.16699 3.33333 10.0003 4.16667C10.8337 3.33333 12.2003 2.5 13.7503 2.5ZM10.7786 15.5032C11.5132 15.0404 12.1753 14.5796 12.7961 14.0858C15.2784 12.1108 16.667 9.95292 16.667 7.5C16.667 5.53397 15.3862 4.16667 13.7503 4.16667C12.8537 4.16667 11.8831 4.64092 11.1788 5.34518L10.0003 6.52369L8.82183 5.34518C8.11756 4.64092 7.14691 4.16667 6.25033 4.16667C4.63288 4.16667 3.33366 5.54708 3.33366 7.5C3.33366 9.95292 4.72222 12.1108 7.20461 14.0858C7.82533 14.5796 8.48741 15.0404 9.22208 15.5032C9.47083 15.6599 9.71791 15.8108 10.0003 15.9793C10.2827 15.8108 10.5298 15.6599 10.7786 15.5032Z"
@@ -115,8 +125,8 @@ Premium
           </button>
         </div>
       </div>
-      <div class="flex items-center gap-3">
-        <h1 class="text-2xl font-bold text-black">${card.title}</h1>
+      <div class="flex items-center gap-2">
+        <h1 class="text-xl xl:text-2xl font-bold text-black">${card.title}</h1>
         ${
           card.is_verified
             ? `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -127,7 +137,7 @@ Premium
             : ""
         }
       </div>
-      <p class="text-base text-[#585858]">${card.desc}</p>
+      <p class="text-sm xl:text-base text-[#585858]">${card.desc}</p>
       <div class="card-tags flex flex-wrap gap-1">
         ${tagsMarkup}
       </div>
@@ -145,16 +155,17 @@ function displayCard2(card) {
   let priceM = "";
   if (card.price === "free") priceM = "Free";
   else
-    priceM = `${card.price} <span class="text-[10px] font-normal">per/mo</span>`;
+    priceM = `$${card.price} <span class="text-[10px] font-normal">per/mo</span>`;
 
-  let tagsMarkup = card.tags.map(
-    (tag) => `
-        <p
-            class="p-1 text-xs xl:text-sm border-[1px] border-[#D9D9D9] rounded-[30px] hover:bg-black hover:text-white"
-        >
-            #${tag}
-        </p>`
-  );
+  let tagsMarkup = "";
+  for (let i = 0; i < card.tags.length; i++) {
+    tagsMarkup += `
+    <p
+      class="p-[4px] xl:p-[8px] text-[11px] xl:text-xs border-[1px] border-[#D9D9D9] rounded-[30px] hover:bg-black hover:text-white"
+    >
+        #${card.tags[i]}
+    </p>`;
+  }
 
   let premiumMarkup = `
 <div class="h-[42px] px-2 py-2 border-[1px] border-[#D9D9D9] rounded-[8px]">
@@ -170,7 +181,7 @@ Premium
             <img src="${card.photo_url4}" alt="">
             ${
               card.is_featured
-                ? '<article class="absolute top-[10px] left-[10px] p-2 text-base border-[1px] border-white rounded-[10px] text-white bg-[#FFFFFF33]">Featured</article>'
+                ? '<article class="absolute top-[10px] left-[10px] left-[10px] px-[15px] py-[8px] text-[15px] border-[1px] border-white rounded-[10px] text-white bg-[#FFFFFF33]">Featured</article>'
                 : ""
             }
             <button
@@ -239,12 +250,12 @@ function displayCard3(card) {
           </div>
           <div class="card-body flex flex-col gap-3 px-3 py-3">
             <div class="flex items-center gap-3">
-              <h1 class="text-base md:text-sm lg:text-lg font-medium text-black">${card.title}</h1>
+              <h1 class="text-[13px] md:text-[13px] xl:text-lg font-medium text-black">${card.title}</h1>
             </div>
-            <p class="text-base text-[#585858]">${card.desc}</p>
-            <div class="card-actions flex justify-between">
-              <div
-                class="h-[42px] w-[95px] flex items-center justify-center border-[1px] border-[#D9D9D9] bg-black rounded-[100px]">
+            <p class="text-[10px] md:text-[11px] xl:text-base text-[#585858]">${card.desc}</p>
+            <div class="card-actions flex justify-between mt-[8px] xl:mt-5">
+            <div
+                class="h-[34px] xl:h-[42px] w-[85px] xl:w-[95px] flex items-center justify-center border-[1px] border-[#D9D9D9] bg-black rounded-[100px]">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                   <path
                     d="M7 3V5H2V16H13V11H15V17C15 17.5523 14.5523 18 14 18H1C0.44772 18 0 17.5523 0 17V4C0 3.44772 0.44772 3 1 3H7ZM18 0V8H16L15.9999 3.413L8.2071 11.2071L6.79289 9.7929L14.5849 2H10V0H18Z"
@@ -253,7 +264,7 @@ function displayCard3(card) {
               </div>
               <div class="flex gap-2">
                 <button
-                  class="h-[42px] w-[42px] flex items-center justify-center border-[1px] border-[#D9D9D9] rounded-[8px]">
+                  class="h-[34px] w-[34px] xl:h-[42px] xl:w-[42px] flex items-center justify-center border-[1px] border-[#D9D9D9] rounded-[8px]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="17" height="18" viewBox="0 0 17 18" fill="none">
                     <path
                       d="M9.93383 13.186L6.43473 11.2773C5.82645 11.9274 4.96083 12.3337 4.00033 12.3337C2.15938 12.3337 0.666992 10.8412 0.666992 9.00033C0.666992 7.15938 2.15938 5.66699 4.00033 5.66699C4.96078 5.66699 5.82637 6.07321 6.43464 6.72321L9.93383 4.8146C9.86841 4.554 9.83366 4.28122 9.83366 4.00033C9.83366 2.15938 11.3261 0.666992 13.167 0.666992C15.0079 0.666992 16.5003 2.15938 16.5003 4.00033C16.5003 5.84128 15.0079 7.33366 13.167 7.33366C12.2065 7.33366 11.3409 6.92742 10.7326 6.27738L7.23347 8.18599C7.29891 8.44658 7.33366 8.71941 7.33366 9.00033C7.33366 9.28124 7.29892 9.55399 7.2335 9.81458L10.7327 11.7232C11.3409 11.0732 12.2065 10.667 13.167 10.667C15.0079 10.667 16.5003 12.1594 16.5003 14.0003C16.5003 15.8412 15.0079 17.3337 13.167 17.3337C11.3261 17.3337 9.83366 15.8412 9.83366 14.0003C9.83366 13.7194 9.86841 13.4466 9.93383 13.186ZM4.00033 10.667C4.9208 10.667 5.66699 9.92083 5.66699 9.00033C5.66699 8.07983 4.9208 7.33366 4.00033 7.33366C3.07985 7.33366 2.33366 8.07983 2.33366 9.00033C2.33366 9.92083 3.07985 10.667 4.00033 10.667ZM13.167 5.66699C14.0875 5.66699 14.8337 4.9208 14.8337 4.00033C14.8337 3.07985 14.0875 2.33366 13.167 2.33366C12.2465 2.33366 11.5003 3.07985 11.5003 4.00033C11.5003 4.9208 12.2465 5.66699 13.167 5.66699ZM13.167 15.667C14.0875 15.667 14.8337 14.9208 14.8337 14.0003C14.8337 13.0798 14.0875 12.3337 13.167 12.3337C12.2465 12.3337 11.5003 13.0798 11.5003 14.0003C11.5003 14.9208 12.2465 15.667 13.167 15.667Z"
@@ -261,7 +272,7 @@ function displayCard3(card) {
                   </svg>
                 </button>
                 <button
-                  class="h-[42px] w-[42px] flex items-center justify-center border-[1px] border-[#D9D9D9] rounded-[8px]">
+                  class="h-[34px] w-[34px] xl:h-[42px] xl:w-[42px] flex items-center justify-center border-[1px] border-[#D9D9D9] rounded-[8px]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" fill="none">
                     <path
                       d="M0.84544 0H12.6816C13.1485 0 13.527 0.3731 13.527 0.833333V16.7861C13.527 17.0162 13.3377 17.2028 13.1043 17.2028C13.0249 17.2028 12.9471 17.1807 12.8798 17.1391L6.76352 13.3594L0.64726 17.1391C0.449461 17.2613 0.188584 17.2024 0.064566 17.0074C0.0223786 16.9411 0 16.8644 0 16.7861V0.833333C0 0.3731 0.37852 0 0.84544 0ZM11.8362 1.66667H1.69088V14.527L6.76352 11.3923L11.8362 14.527V1.66667Z"
@@ -281,63 +292,63 @@ function displaySmallCard(card) {
   let priceM = "";
   if (card.price === "free") priceM = "Free";
   else
-    priceM = `${card.price} <span class="text-[10px] font-normal">per/mo</span>`;
+    priceM = `$${card.price} <span class="text-[10px] font-normal">per/mo</span>`;
 
   let markup = `
     <div class="card col-span-1 flex border-[1px] border-[#D9D9D9] rounded-[20px] shadow-lg">
 
-          <div class="card-img w-[45%] h-full p-2 overflow-hidden relative">
-            <img src="${card.photo_url}" alt="" class="w-full h-full object-cover rounded-[19px]">
+          <div class="card-img w-[50%] lg:w-[45%] h-full p-2 flex items-center overflow-hidden relative">
+            <img src="${card.photo_url}" alt="" class="w-full lg:h-[100px] xl:h-[120px] object-cover rounded-[19px]">
             <article class="price-tag absolute top-[14px] right-[14px] p-1 text-xs rounded-[8px] bg-white z-10">From
               $${card.price}</article>
           </div>
 
-          <div class="card-body flex-1 flex flex-col gap-3 pe-2 py-3">
+          <div class="card-body flex-1 flex flex-col gap-1 pe-2 py-3">
             <div class="flex items-center gap-3">
-              <h1 class="text-sm md:text-[15px] font-medium text-black">${card.title}</h1>
+              <h1 class="small-card-title text-[13px] xl:text-[15px] font-medium text-black">${card.title}</h1>
             </div>
             <div class="flex flex-col gap-1">
               <article class="flex items-center gap-1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13" viewBox="0 0 15 13" fill="none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13" viewBox="0 0 15 13" fill="none" class="h-[10px] xl:h-[13px]">
                   <path
                     d="M0.978889 0.372131V3.41759H14.3997V0.372131H0.978889ZM0.978889 4.94031V12.4169C0.978889 12.493 1.05558 12.5539 1.15144 12.5539H14.208C14.3039 12.5539 14.3805 12.493 14.3805 12.4169V4.94031H0.959717H0.978889ZM2.89615 6.46304H4.81341V7.98577H2.89615V6.46304ZM6.73067 6.46304H8.64793V7.98577H6.73067V6.46304ZM10.5652 6.46304H12.4825V7.98577H10.5652V6.46304ZM2.89615 9.5085H4.81341V11.0312H2.89615V9.5085ZM6.73067 9.5085H8.64793V11.0312H6.73067V9.5085Z"
                     fill="#11174C" />
                 </svg>
-                <p class="text-[13px] text-[#585858]">${card.date}</p>
+                <p class="small-card-text text-[9px] xl:text-[13px] text-[#585858]">${card.date}</p>
               </article>
               <article class="flex items-center gap-1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="16" viewBox="0 0 13 16" fill="none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="16" viewBox="0 0 13 16" fill="none"class="h-[10px] xl:h-[13px]">
                   <path
                     d="M6.55972 0.305725C3.46105 0.305725 0.959717 2.779 0.959717 5.84292C0.959717 9.53438 6.55972 15.0716 6.55972 15.0716C6.55972 15.0716 12.1597 9.53438 12.1597 5.84292C12.1597 2.779 9.65838 0.305725 6.55972 0.305725ZM6.55972 2.15146C8.63172 2.15146 10.293 3.81261 10.293 5.84292C10.293 7.89168 8.63172 9.53438 6.55972 9.53438C4.50638 9.53438 2.82638 7.89168 2.82638 5.84292C2.82638 3.81261 4.50638 2.15146 6.55972 2.15146Z"
                     fill="#11174C" />
                 </svg>
-                <p class="text-[13px] text-[#585858]">${card.location}</p>
+                <p class="small-card-text text-[9px] xl:text-[13px] text-[#585858]">${card.location}</p>
               </article>
             </div>
-            <div class="card-actions flex justify-between">
-              <div
-                class="h-[25px] w-[60px] flex items-center justify-center border-[1px] border-[#D9D9D9] bg-black rounded-[100px]">
+            <div class="small-card-actions flex justify-between pt-2 mt-auto lg:pt-0">
+              <button
+                class="h-[20px] xl:h-[25px] w-[50px] xl:w-[60px] flex items-center justify-center border-[1px] border-[#D9D9D9] bg-black rounded-[100px]">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none"
-                  class="h-[16px] w-[16px]">
+                  class="small-card-icons h-[14px] xl:h-[16px] w-[14px] xl:w-[16px]">
                   <path
                     d="M7 3V5H2V16H13V11H15V17C15 17.5523 14.5523 18 14 18H1C0.44772 18 0 17.5523 0 17V4C0 3.44772 0.44772 3 1 3H7ZM18 0V8H16L15.9999 3.413L8.2071 11.2071L6.79289 9.7929L14.5849 2H10V0H18Z"
                     fill="white" />
                 </svg>
-              </div>
+              </button>
               <div class="flex gap-2">
                 <button
-                  class="h-[25px] w-[25px] flex items-center justify-center border-[1px] border-[#D9D9D9] rounded-[8px]">
+                  class="h-[20px] xl:h-[25px] w-[20px] xl:w-[25px] flex items-center justify-center border-[1px] border-[#D9D9D9] rounded-[8px]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="17" height="18" viewBox="0 0 17 18" fill="none"
-                    class="h-[16px] w-[16px]">
+                    class="small-card-icons h-[14px] xl:h-[16px] w-[14px] xl:w-[16px]">
                     <path
                       d="M9.93383 13.186L6.43473 11.2773C5.82645 11.9274 4.96083 12.3337 4.00033 12.3337C2.15938 12.3337 0.666992 10.8412 0.666992 9.00033C0.666992 7.15938 2.15938 5.66699 4.00033 5.66699C4.96078 5.66699 5.82637 6.07321 6.43464 6.72321L9.93383 4.8146C9.86841 4.554 9.83366 4.28122 9.83366 4.00033C9.83366 2.15938 11.3261 0.666992 13.167 0.666992C15.0079 0.666992 16.5003 2.15938 16.5003 4.00033C16.5003 5.84128 15.0079 7.33366 13.167 7.33366C12.2065 7.33366 11.3409 6.92742 10.7326 6.27738L7.23347 8.18599C7.29891 8.44658 7.33366 8.71941 7.33366 9.00033C7.33366 9.28124 7.29892 9.55399 7.2335 9.81458L10.7327 11.7232C11.3409 11.0732 12.2065 10.667 13.167 10.667C15.0079 10.667 16.5003 12.1594 16.5003 14.0003C16.5003 15.8412 15.0079 17.3337 13.167 17.3337C11.3261 17.3337 9.83366 15.8412 9.83366 14.0003C9.83366 13.7194 9.86841 13.4466 9.93383 13.186ZM4.00033 10.667C4.9208 10.667 5.66699 9.92083 5.66699 9.00033C5.66699 8.07983 4.9208 7.33366 4.00033 7.33366C3.07985 7.33366 2.33366 8.07983 2.33366 9.00033C2.33366 9.92083 3.07985 10.667 4.00033 10.667ZM13.167 5.66699C14.0875 5.66699 14.8337 4.9208 14.8337 4.00033C14.8337 3.07985 14.0875 2.33366 13.167 2.33366C12.2465 2.33366 11.5003 3.07985 11.5003 4.00033C11.5003 4.9208 12.2465 5.66699 13.167 5.66699ZM13.167 15.667C14.0875 15.667 14.8337 14.9208 14.8337 14.0003C14.8337 13.0798 14.0875 12.3337 13.167 12.3337C12.2465 12.3337 11.5003 13.0798 11.5003 14.0003C11.5003 14.9208 12.2465 15.667 13.167 15.667Z"
                       fill="black" />
                   </svg>
                 </button>
                 <button
-                  class="h-[25px] w-[25px] flex items-center justify-center border-[1px] border-[#D9D9D9] rounded-[8px]">
+                  class="h-[20px] xl:h-[25px] w-[20px] xl:w-[25px] flex items-center justify-center border-[1px] border-[#D9D9D9] rounded-[8px]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" fill="none"
-                    class="h-[16px] w-[16px]">
+                    class="small-card-icons h-[14px] xl:h-[16px] w-[14px] xl:w-[16px]">
                     <path
                       d="M0.84544 0H12.6816C13.1485 0 13.527 0.3731 13.527 0.833333V16.7861C13.527 17.0162 13.3377 17.2028 13.1043 17.2028C13.0249 17.2028 12.9471 17.1807 12.8798 17.1391L6.76352 13.3594L0.64726 17.1391C0.449461 17.2613 0.188584 17.2024 0.064566 17.0074C0.0223786 16.9411 0 16.8644 0 16.7861V0.833333C0 0.3731 0.37852 0 0.84544 0ZM11.8362 1.66667H1.69088V14.527L6.76352 11.3923L11.8362 14.527V1.66667Z"
                       fill="#1E1E1E" />
@@ -358,21 +369,21 @@ function displaySmallCard(card) {
 function displayRankCard(card) {
   let priceM = "";
   if (card.price === "free") priceM = "Free";
-  else priceM = `${card.price}`;
+  else priceM = `$${card.price}`;
 
   let premiumMarkup = `
-  <div class="h-[42px] px-2 py-2 border-[1px] border-[#D9D9D9] rounded-[8px]">
+  <div class="lg:h-[42px] px-2 py-2 text-[12px] lg:text-base border-[1px] border-[#D9D9D9] rounded-[8px]">
   Premium
   </div>`;
 
-  let priceMarkup = `<div class="px-2 py-2 border-[1px] border-[#D9D9D9] rounded-[8px]">
+  let priceMarkup = `<div class="px-2 py-2 text-[12px] lg:text-base border-[1px] border-[#D9D9D9] rounded-[8px]">
   $15/mo
 </div>`;
 
   let rank = "";
   if (card.rank == 1) {
     rank = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none"
-    class="h-5 md:h-6 w-5 md:w-6">
+    class="h-5 lg:h-6 w-5 lg:w-6">
     <path fill-rule="evenodd" clip-rule="evenodd"
        d="M11.013 4.98536C11.1852 4.76054 11.4978 4.43573 11.9995 4.43573C12.5012 4.43573 12.8138 4.76054 12.986 4.98536C13.1503 5.19994 13.3158 5.49697 13.4855 5.8015L13.607 6.01942C13.6298 6.06032 13.6477 6.0925 13.6634 6.12003C13.6907 6.12644 13.7225 6.13365 13.7622 6.14263L14.0001 6.19643C14.3279 6.27051 14.6537 6.34412 14.9037 6.44268C15.1799 6.5515 15.5542 6.76343 15.6984 7.22734C15.8402 7.68307 15.6613 8.06909 15.5051 8.31719C15.3606 8.54681 15.1409 8.80359 14.916 9.06648L14.7553 9.25434C14.7208 9.29467 14.6948 9.32508 14.673 9.35139C14.6759 9.38773 14.68 9.43006 14.6855 9.48666L14.7097 9.73612C14.7439 10.088 14.7769 10.4281 14.7648 10.7002C14.7521 10.9854 14.6836 11.4172 14.2964 11.7111C13.897 12.0143 13.4559 11.9483 13.1762 11.8681C12.9185 11.7943 12.6139 11.6539 12.3072 11.5126L12.0844 11.41C12.0509 11.3946 12.0235 11.382 11.9995 11.3711C11.9755 11.382 11.9481 11.3946 11.9146 11.41L11.6918 11.5126C11.3851 11.6539 11.0805 11.7943 10.8228 11.8681C10.5431 11.9483 10.102 12.0143 9.7026 11.7111C9.31543 11.4172 9.24697 10.9854 9.23427 10.7002C9.22215 10.4281 9.25517 10.0881 9.28935 9.73615L9.31353 9.48666C9.31902 9.43006 9.3231 9.38773 9.32609 9.35139C9.30419 9.32508 9.2782 9.29467 9.24372 9.25434L9.08305 9.06648C8.85814 8.80359 8.63845 8.54681 8.4939 8.31719C8.33771 8.06909 8.15888 7.68307 8.3006 7.22734C8.44486 6.76343 8.81916 6.5515 9.0953 6.44268C9.34539 6.34413 9.67117 6.27051 9.99898 6.19643L10.2368 6.14264C10.2765 6.13365 10.3083 6.12644 10.3356 6.12003C10.3513 6.0925 10.3692 6.06032 10.392 6.01942L10.5135 5.80149C10.6832 5.49697 10.8487 5.19994 11.013 4.98536ZM11.9995 6.22021C11.9414 6.32086 11.8767 6.43676 11.8005 6.57342L11.7022 6.74978L11.6799 6.79039C11.6014 6.934 11.4713 7.17183 11.2545 7.33644C11.0331 7.50449 10.7668 7.56232 10.6111 7.59613L10.5678 7.60565L10.3769 7.64885C10.2017 7.68848 10.059 7.72082 9.93704 7.75148C10.0164 7.84918 10.1194 7.97047 10.2535 8.12727L10.3837 8.27945L10.4136 8.31414C10.5216 8.43846 10.6958 8.63919 10.7764 8.89834C10.8561 9.15442 10.8286 9.41816 10.8113 9.58455L10.8065 9.63133L10.7868 9.83439C10.7686 10.0226 10.7544 10.1729 10.745 10.2951C10.8492 10.2492 10.9677 10.1946 11.1085 10.1298L11.2873 10.0475L11.3276 10.0286C11.4711 9.96095 11.7208 9.84319 11.9995 9.84319C12.2782 9.84319 12.5279 9.96094 12.6714 10.0286L12.7117 10.0475L12.8905 10.1298C13.0313 10.1946 13.1498 10.2492 13.254 10.2951C13.2446 10.1729 13.2304 10.0226 13.2122 9.83439L13.1925 9.63133L13.1877 9.58455C13.1704 9.41816 13.1429 9.15442 13.2226 8.89834C13.3032 8.63919 13.4774 8.43846 13.5854 8.31414L13.6153 8.27945L13.7455 8.12726C13.8796 7.97047 13.9826 7.84918 14.062 7.75148C13.94 7.72082 13.7973 7.68848 13.6221 7.64885L13.4312 7.60565L13.3879 7.59613C13.2322 7.56232 12.9659 7.5045 12.7445 7.33644C12.5277 7.17183 12.3976 6.934 12.3191 6.79039L12.2968 6.74978L12.1985 6.57342C12.1223 6.43676 12.0576 6.32086 11.9995 6.22021ZM10.7388 10.6972C10.7388 10.6972 10.7386 10.6963 10.7382 10.6941L10.7388 10.6972ZM13.2602 10.6972L13.2608 10.6941C13.2604 10.6963 13.2602 10.6972 13.2602 10.6972Z"
       fill="#F49D1A" />
@@ -383,7 +394,7 @@ function displayRankCard(card) {
   } else if (card.rank == 2) {
     rank = `
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none"
-                  class="h-5 md:h-6 w-5 md:w-6">
+                  class="h-5 lg:h-6 w-5 lg:w-6">
                   <path fill-rule="evenodd" clip-rule="evenodd"
                     d="M11.013 4.98524C11.1852 4.76042 11.4978 4.43561 11.9995 4.43561C12.5012 4.43561 12.8138 4.76042 12.986 4.98524C13.1503 5.19982 13.3158 5.49685 13.4855 5.80138L13.607 6.0193C13.6298 6.0602 13.6477 6.09238 13.6634 6.11991C13.6907 6.12632 13.7225 6.13353 13.7622 6.14251L14.0001 6.19631C14.3279 6.27039 14.6537 6.344 14.9037 6.44256C15.1799 6.55138 15.5542 6.76331 15.6984 7.22722C15.8402 7.68295 15.6613 8.06897 15.5051 8.31707C15.3606 8.54669 15.1409 8.80347 14.916 9.06636L14.7553 9.25422C14.7208 9.29455 14.6948 9.32496 14.673 9.35127C14.6759 9.38761 14.68 9.42994 14.6855 9.48654L14.7097 9.736C14.7439 10.0879 14.7769 10.428 14.7648 10.7001C14.7521 10.9853 14.6836 11.4171 14.2964 11.711C13.897 12.0142 13.4559 11.9482 13.1762 11.868C12.9185 11.7942 12.6139 11.6538 12.3072 11.5125L12.0844 11.4099C12.0509 11.3945 12.0235 11.3819 11.9995 11.371C11.9755 11.3819 11.9481 11.3945 11.9146 11.4099L11.6918 11.5125C11.3851 11.6538 11.0805 11.7942 10.8228 11.868C10.5431 11.9482 10.102 12.0142 9.7026 11.711C9.31543 11.4171 9.24697 10.9853 9.23427 10.7001C9.22215 10.428 9.25517 10.0879 9.28935 9.73603L9.31353 9.48654C9.31902 9.42994 9.3231 9.38761 9.32609 9.35127C9.30419 9.32496 9.2782 9.29455 9.24372 9.25422L9.08305 9.06636C8.85814 8.80347 8.63845 8.54669 8.4939 8.31707C8.33771 8.06897 8.15888 7.68295 8.3006 7.22722C8.44486 6.76331 8.81916 6.55138 9.0953 6.44256C9.34539 6.34401 9.67117 6.27039 9.99898 6.19631L10.2368 6.14252C10.2765 6.13353 10.3083 6.12632 10.3356 6.11991C10.3513 6.09238 10.3692 6.0602 10.392 6.0193L10.5135 5.80137C10.6832 5.49685 10.8487 5.19982 11.013 4.98524ZM11.9995 6.22009C11.9414 6.32074 11.8767 6.43664 11.8005 6.5733L11.7022 6.74966L11.6799 6.79027C11.6014 6.93388 11.4713 7.17171 11.2545 7.33632C11.0331 7.50437 10.7668 7.5622 10.6111 7.59601L10.5678 7.60553L10.3769 7.64873C10.2017 7.68836 10.059 7.7207 9.93704 7.75136C10.0164 7.84906 10.1194 7.97035 10.2535 8.12715L10.3837 8.27933L10.4136 8.31402C10.5216 8.43834 10.6958 8.63907 10.7764 8.89822C10.8561 9.1543 10.8286 9.41804 10.8113 9.58443L10.8065 9.63121L10.7868 9.83427C10.7686 10.0225 10.7544 10.1728 10.745 10.295C10.8492 10.2491 10.9677 10.1945 11.1085 10.1297L11.2873 10.0474L11.3276 10.0285C11.4711 9.96083 11.7208 9.84307 11.9995 9.84307C12.2782 9.84307 12.5279 9.96082 12.6714 10.0285L12.7117 10.0474L12.8905 10.1297C13.0313 10.1945 13.1498 10.2491 13.254 10.295C13.2446 10.1728 13.2304 10.0225 13.2122 9.83427L13.1925 9.63121L13.1877 9.58443C13.1704 9.41804 13.1429 9.1543 13.2226 8.89822C13.3032 8.63907 13.4774 8.43834 13.5854 8.31402L13.6153 8.27933L13.7455 8.12714C13.8796 7.97035 13.9826 7.84906 14.062 7.75136C13.94 7.7207 13.7973 7.68836 13.6221 7.64873L13.4312 7.60553L13.3879 7.59601C13.2322 7.5622 12.9659 7.50438 12.7445 7.33632C12.5277 7.17171 12.3976 6.93388 12.3191 6.79027L12.2968 6.74966L12.1985 6.5733C12.1223 6.43664 12.0576 6.32074 11.9995 6.22009ZM10.7388 10.6971C10.7388 10.6971 10.7386 10.6962 10.7382 10.694L10.7388 10.6971ZM13.2602 10.6971L13.2608 10.694C13.2604 10.6962 13.2602 10.6971 13.2602 10.6971Z"
                     fill="#9F9F9F" />
@@ -394,7 +405,7 @@ function displayRankCard(card) {
   } else if (card.rank == 3) {
     rank = `
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none"
-                  class="h-5 md:h-6 w-5 md:w-6">
+                  class="h-5 lg:h-6 w-5 lg:w-6">
                   <path fill-rule="evenodd" clip-rule="evenodd"
                     d="M11.013 4.98573C11.1852 4.76091 11.4978 4.4361 11.9995 4.4361C12.5012 4.4361 12.8138 4.76091 12.986 4.98573C13.1503 5.20031 13.3158 5.49734 13.4855 5.80187L13.607 6.01979C13.6298 6.06069 13.6477 6.09287 13.6634 6.1204C13.6907 6.12681 13.7225 6.13402 13.7622 6.143L14.0001 6.1968C14.3279 6.27088 14.6537 6.34449 14.9037 6.44305C15.1799 6.55187 15.5542 6.7638 15.6984 7.22771C15.8402 7.68344 15.6613 8.06946 15.5051 8.31756C15.3606 8.54718 15.1409 8.80396 14.916 9.06685L14.7553 9.25471C14.7208 9.29504 14.6948 9.32545 14.673 9.35176C14.6759 9.3881 14.68 9.43043 14.6855 9.48703L14.7097 9.73649C14.7439 10.0884 14.7769 10.4285 14.7648 10.7006C14.7521 10.9858 14.6836 11.4176 14.2964 11.7115C13.897 12.0147 13.4559 11.9487 13.1762 11.8685C12.9185 11.7947 12.6139 11.6543 12.3072 11.513L12.0844 11.4104C12.0509 11.395 12.0235 11.3824 11.9995 11.3715C11.9755 11.3824 11.9481 11.395 11.9146 11.4104L11.6918 11.513C11.3851 11.6543 11.0805 11.7947 10.8228 11.8685C10.5431 11.9487 10.102 12.0147 9.7026 11.7115C9.31543 11.4176 9.24697 10.9858 9.23427 10.7006C9.22215 10.4285 9.25517 10.0884 9.28935 9.73652L9.31353 9.48703C9.31902 9.43043 9.3231 9.3881 9.32609 9.35176C9.30419 9.32545 9.2782 9.29504 9.24372 9.25471L9.08305 9.06685C8.85814 8.80396 8.63845 8.54718 8.4939 8.31756C8.33771 8.06946 8.15888 7.68344 8.3006 7.22771C8.44486 6.7638 8.81916 6.55187 9.0953 6.44305C9.34539 6.3445 9.67117 6.27088 9.99898 6.1968L10.2368 6.14301C10.2765 6.13402 10.3083 6.12681 10.3356 6.1204C10.3513 6.09287 10.3692 6.06069 10.392 6.01979L10.5135 5.80186C10.6832 5.49734 10.8487 5.20031 11.013 4.98573ZM11.9995 6.22058C11.9414 6.32123 11.8767 6.43713 11.8005 6.57379L11.7022 6.75015L11.6799 6.79076C11.6014 6.93437 11.4713 7.1722 11.2545 7.33681C11.0331 7.50486 10.7668 7.56269 10.6111 7.5965L10.5678 7.60602L10.3769 7.64922C10.2017 7.68885 10.059 7.72119 9.93704 7.75185C10.0164 7.84955 10.1194 7.97084 10.2535 8.12764L10.3837 8.27982L10.4136 8.31451C10.5216 8.43883 10.6958 8.63956 10.7764 8.89871C10.8561 9.15479 10.8286 9.41853 10.8113 9.58492L10.8065 9.6317L10.7868 9.83476C10.7686 10.023 10.7544 10.1733 10.745 10.2955C10.8492 10.2496 10.9677 10.195 11.1085 10.1302L11.2873 10.0479L11.3276 10.029C11.4711 9.96132 11.7208 9.84356 11.9995 9.84356C12.2782 9.84356 12.5279 9.96131 12.6714 10.029L12.7117 10.0479L12.8905 10.1302C13.0313 10.195 13.1498 10.2496 13.254 10.2955C13.2446 10.1733 13.2304 10.023 13.2122 9.83476L13.1925 9.6317L13.1877 9.58492C13.1704 9.41853 13.1429 9.15479 13.2226 8.89871C13.3032 8.63956 13.4774 8.43883 13.5854 8.31451L13.6153 8.27982L13.7455 8.12763C13.8796 7.97084 13.9826 7.84955 14.062 7.75185C13.94 7.72119 13.7973 7.68885 13.6221 7.64922L13.4312 7.60602L13.3879 7.5965C13.2322 7.56269 12.9659 7.50487 12.7445 7.33681C12.5277 7.1722 12.3976 6.93437 12.3191 6.79076L12.2968 6.75015L12.1985 6.57379C12.1223 6.43713 12.0576 6.32123 11.9995 6.22058ZM10.7388 10.6976C10.7388 10.6976 10.7386 10.6967 10.7382 10.6945L10.7388 10.6976ZM13.2602 10.6976L13.2608 10.6945C13.2604 10.6967 13.2602 10.6976 13.2602 10.6976Z"
                     fill="#C08261" />
@@ -407,13 +418,13 @@ function displayRankCard(card) {
 
   let markup = `
     <div
-    class="card col-span-1 flex flex-col md:flex-row items-center justify-between p-2 border-[1px] border-[#D9D9D9] rounded-[20px] shadow-lg">
+    class="card col-span-1 flex flex-col md:flex-row items-center justify-between p-4 border-[1px] border-[#D9D9D9] rounded-[20px] shadow-lg">
 
-    <div class="w-full flex items-center">
-      <div class="rank w-[40px] md:w-[50px] flex items-center justify-center ">
+    <div class="w-full flex flex-col md:flex-row items-center">
+      <div class="rank w-[40px] md:w-[50px] hidden md:flex items-center justify-center ">
         <div class="flex items-end gap-1">
           ${rank}
-          <h3 class="text-xl md:text-[26px] lg:text-[34px] font-medium">${
+          <h3 class="text-xl md:text-[20px] lg:text-[30px] xl:text-[34px] font-medium">${
             card.rank
           }.</h3>
         </div>
@@ -421,41 +432,57 @@ function displayRankCard(card) {
       </div>
 
       <div
-        class="card-img w-[100px] md:w-[120px] lg:w-[140px] xl:w-[170px] h-full p-1 md:p-2 overflow-hidden relative">
+        class="card-img w-full md:w-[120px] lg:w-[140px] xl:w-[170px] h-full p-1 md:p-2 overflow-hidden relative">
         <img src="${
           card.photo_url
         }" alt="" class="w-full h-full object-cover rounded-[10px]">
       </div>
 
-      <div class="flex flex-col gap-1">
+      <div class="w-full flex items-center gap-2">
+      
+        <div class="w-[40px] flex md:hidden items-start md:items-end gap-1">
+          ${rank}
+          <h3 class="leading-[18px] text-lg md:text-[20px] lg:text-[30px] xl:text-[34px] font-medium">${
+            card.rank
+          }.</h3>
+        </div>
+      
+      
+      
+      
+      <div class="flex-1 md:w-auto flex flex-col gap-1 mt-[14px] md:mt-0">
         <div class="flex items-center gap-1 md:gap-3">
           <h1 class="text-sm md:text-base lg:text-sm lg:text-lg font-medium text-black">${
             card.title
           }
           </h1>
-          ${ card.is_verified ? 
-          `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+          ${
+            card.is_verified
+              ? `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
             <path
               d="M8.0154 0.145629C6.61978 -0.30616 5.1026 0.322268 4.43518 1.62862L3.63281 3.19911C3.53748 3.38572 3.38572 3.53748 3.19911 3.63281L1.62862 4.43518C0.322268 5.1026 -0.30616 6.61978 0.145629 8.0154L0.68878 9.69327C0.753316 9.89262 0.753316 10.1073 0.68878 10.3067L0.145629 11.9845C-0.30616 13.3802 0.322268 14.8973 1.62862 15.5648L3.19911 16.3671C3.38572 16.4625 3.53748 16.6142 3.63281 16.8009L4.43518 18.3714C5.1026 19.6777 6.61978 20.3062 8.0154 19.8544L9.69327 19.3112C9.89262 19.2467 10.1073 19.2467 10.3067 19.3112L11.9845 19.8544C13.3802 20.3062 14.8973 19.6777 15.5648 18.3714L16.3671 16.8009C16.4625 16.6142 16.6142 16.4625 16.8009 16.3671L18.3714 15.5648C19.6777 14.8973 20.3062 13.3802 19.8544 11.9845L19.3112 10.3067C19.2467 10.1073 19.2467 9.89262 19.3112 9.69327L19.8544 8.0154C20.3062 6.61978 19.6777 5.1026 18.3714 4.43518L16.8009 3.63281C16.6142 3.53748 16.4625 3.38572 16.3671 3.19911L15.5648 1.62862C14.8973 0.322268 13.3802 -0.30616 11.9845 0.145629L10.3067 0.68878C10.1073 0.753306 9.89262 0.753316 9.69327 0.68878L8.0154 0.145629ZM4.78192 9.7583L6.19015 8.34998L9.00659 11.1665L14.6395 5.5336L16.0478 6.94183L9.00659 13.9829L4.78192 9.7583Z"
               fill="#1C92FF" />
-          </svg>`: ""}
+          </svg>`
+              : ""
+          }
         </div>
         <p class="text-xs md:text-sm font-medium text-[#585858]">${
           card.desc
         }</p>
       </div>
-
+      </div>
+     
     </div>
 
-    <div class="card-body w-full flex gap-3 pe-2 py-3">
-      <div class="card-actions flex-1 flex items-center md:justify-end gap-3">
+    <div class="card-body w-full flex gap-3 pe-4 py-3">
+      <div class="card-actions flex-1 flex mt-2 md:mt-0 items-center justify-start flex-wrap md:justify-end gap-3">
         ${card.is_premium ? premiumMarkup : ""}
         ${card.price != 0 ? priceMarkup : ""}
         
         <button
-          class="flex items-center justify-center text-xs md:text-sm lg:text-base gap-1 px-2 py-2 border-[1px] border-[#D9D9D9] rounded-[8px]">
+          class="flex items-center justify-center text-xs md:text-[12px] lg:text-base gap-1 px-2 py-2 border-[1px] border-[#D9D9D9] rounded-[8px]">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"
-            class="h-5 w-5">
+            class="h-[16px] lg:h-5 w-[16px] lg:w-5">
             <path
               d="M13.7503 3.00052C16.2817 3.00052 18.3337 5.08385 18.3337 8.00052C18.3337 13.8339 12.0837 17.1672 10.0003 18.4172C7.91699 17.1672 1.66699 13.8339 1.66699 8.00052C1.66699 5.08385 3.75033 3.00052 6.25033 3.00052C7.8003 3.00052 9.16699 3.83385 10.0003 4.66719C10.8337 3.83385 12.2003 3.00052 13.7503 3.00052ZM10.7786 16.0037C11.5132 15.5409 12.1753 15.0801 12.7961 14.5863C15.2784 12.6114 16.667 10.4534 16.667 8.00052C16.667 6.03449 15.3862 4.66719 13.7503 4.66719C12.8537 4.66719 11.8831 5.14144 11.1788 5.84569L10.0003 7.02421L8.82183 5.84569C8.11756 5.14144 7.14691 4.66719 6.25033 4.66719C4.63288 4.66719 3.33366 6.0476 3.33366 8.00052C3.33366 10.4534 4.72222 12.6114 7.20461 14.5863C7.82533 15.0801 8.48741 15.5409 9.22208 16.0037C9.47083 16.1604 9.71791 16.3113 10.0003 16.4799C10.2827 16.3113 10.5298 16.1604 10.7786 16.0037Z"
               fill="#FF6969" />
@@ -465,8 +492,8 @@ function displayRankCard(card) {
           </svg>
           ${card.likes}
         </button>
-
-        <div class="text-xs md:text-sm lg:text-base px-2 py-2 rounded-[100px] text-white bg-black">
+        
+        <div class="w-full md:w-auto ms-2 mt-2 md:mt-0 text-xs md:text-[12px] lg:text-base px-3 xl:px-4 py-2 rounded-[100px] text-center text-white bg-black">
           View Report
         </div>
       </div>

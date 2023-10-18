@@ -116,6 +116,10 @@ html, body {
   padding: 20px 10px;
 }
 
+.owl-carousel .owl-stage {
+  margin-bottom: 10px !important;
+}
+
 .owl-theme .owl-dots {
   display: none;
 }
@@ -124,9 +128,9 @@ html, body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: -40px;
+  left: -55px;
   /* left: -45px; */
-  width: calc(100% + 80px);
+  width: calc(100% + 110px);
   display: flex;
   justify-content: space-between;
 }
@@ -226,17 +230,17 @@ input[type=range]::-webkit-slider-runnable-track  {
 
 @media screen and (min-width: 300px) and (max-width: 786px) {
   .containerX {
-    width: 96%;
+    width: 90%;
     margin: auto;
   }
 
   .owl-carousel.owl-theme {
-    padding: 10px 25px;
+    padding: 10px 0px;
   }
 
   .owl-theme .owl-nav {
-    left: -6px;
-    width: calc(100% + 10px);
+    left: -25px;
+    width: calc(100% + 50px);
   }
   .owl-theme .owl-nav button {
     width: 20px;
@@ -247,6 +251,24 @@ input[type=range]::-webkit-slider-runnable-track  {
     height: 24px;
   }
 
+}
 
+@media screen and (max-width: 360px) {
+  .small-card-title {
+    font-size: 11px !important;
+  }
+
+  .small-card-text {
+    font-size: 8px !important;
+  }
+
+  .small-card-actions {
+    padding-top: 0 !important;
+  }
+
+  .small-card-icons {
+    width: 10px !important;
+    height: 10px !important;
+  }
 }
 

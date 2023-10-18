@@ -7,7 +7,7 @@
         "is_premium": true,
         "is_verified": true,
         "likes": 221,
-        "tags": [ "website", "AI Assistant", "Development" ],
+        "tags": [ "website", "AI Assistant", "Development", "chatbot" ],
         "photo_url": "./assets/png/card-img-1.png"
     },
     {
@@ -18,7 +18,7 @@
         "is_premium": true,
         "is_verified": false,
         "likes": 221,
-        "tags": [ "website", "AI Assistant", "Development" ],
+        "tags": [ "website", "AI Assistant", "Development", "chatbot" ],
         "photo_url": "./assets/png/card-img-2.png"
     },
     {
@@ -29,7 +29,7 @@
         "is_premium": true,
         "is_verified": true,
         "likes": 11,
-        "tags": [ "website", "AI Assistant", "Development" ],
+        "tags": [ "website", "AI Assistant", "Development", "chatbot" ],
         "photo_url": "./assets/png/card-img-3.png"
     },
     {
@@ -40,7 +40,7 @@
         "is_premium": true,
         "is_verified": true,
         "likes": 221,
-        "tags": [ "website", "AI Assistant", "Development" ],
+        "tags": [ "website", "AI Assistant", "Development", "chatbot" ],
         "photo_url": "./assets/png/card-img-1.png"
     },
     {
@@ -51,7 +51,7 @@
         "is_premium": true,
         "is_verified": true,
         "likes": 221,
-        "tags": [ "website", "AI Assistant", "Development" ],
+        "tags": [ "website", "AI Assistant", "Development", "chatbot" ],
         "photo_url": "./assets/png/card-img-1.png"
     },
     {
@@ -62,7 +62,7 @@
         "is_premium": true,
         "is_verified": true,
         "likes": 221,
-        "tags": [ "website", "AI Assistant", "Development" ],
+        "tags": [ "website", "AI Assistant", "Development", "chatbot" ],
         "photo_url": "./assets/png/card-img-1.png"
     },
     {
@@ -73,7 +73,7 @@
         "is_premium": true,
         "is_verified": true,
         "likes": 11,
-        "tags": [ "website", "AI Assistant", "Development" ],
+        "tags": [ "website", "AI Assistant", "Development", "chatbot" ],
         "photo_url": "./assets/png/card-img-3.png"
     },
     {
@@ -84,7 +84,7 @@
         "is_premium": true,
         "is_verified": true,
         "likes": 221,
-        "tags": [ "website", "AI Assistant", "Development" ],
+        "tags": [ "website", "AI Assistant", "Development", "chatbot" ],
         "photo_url": "./assets/png/card-img-1.png"
     },
     {
@@ -95,7 +95,7 @@
         "is_premium": true,
         "is_verified": true,
         "likes": 221,
-        "tags": [ "website", "AI Assistant", "Development" ],
+        "tags": [ "website", "AI Assistant", "Development", "chatbot" ],
         "photo_url": "./assets/png/card-img-1.png"
     },
     {
@@ -106,7 +106,7 @@
         "is_premium": true,
         "is_verified": true,
         "likes": 221,
-        "tags": [ "website", "AI Assistant", "Development" ],
+        "tags": [ "website", "AI Assistant", "Development", "chatbot" ],
         "photo_url": "./assets/png/card-img-1.png"
     }
 ]
