@@ -33,23 +33,117 @@
 <body>
   <main class="h-screen overflow-y-auto">
 
-    <nav class="containerX bg-white border-gray-200 ">
+    <nav class="containerX bg-white border-gray-200 relative">
       <div
-        class="max-w-screen-xl flex flex-wrap items-center justify-between xl:justify-start gap-x-[100px] md:gap-x-[500px] xl:gap-0 mx-auto py-2 md:p-4">
+        class="max-w-screen-xl flex flex-wrap items-center justify-between lg:justify-start gap-x-[100px] md:gap-x-[500px] lg:gap-0 mx-auto py-2 md:p-4">
         <a href="#" class="flex items-center">
           <img src="./assets/png/logo1.png" alt="" class="h-[27px]">
         </a>
+
+        <ul
+            class="hidden lg:flex xl:hidden flex-col font-normal p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 lg:flex-row lg:space-x-1 lg:mt-0 lg:border-0 lg:bg-white ">
+            <li>
+              <a href="#"
+                class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0">Rankings</a>
+            </li>
+
+            <li>
+              <a href="#"
+                class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0">BookMarks</a>
+            </li>
+            <li>
+              <a href="#"
+                class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0 ">Categories</a>
+            </li>
+            <li>
+              <a href="#"
+                class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0 ">GPT
+                Plugins</a>
+            </li>
+            <li>
+              <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
+                class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-black rounded  xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0 xl:w-auto">Resources
+                <svg class="w-2.5 h-2.5 ml-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="m1 1 4 4 4-4" />
+                </svg></button>
+
+
+              <div id="dropdownNavbar"
+                class=" xl:absolute z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg border-[2px] border-[#D9D9D9]">
+                <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                  <li>
+                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">News</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">AI
+                      Prompts</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">AI Jobs</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">Events</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">Glossary</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">FAQ</a>
+                  </li>
+
+                </ul>
+                <!-- <div class="py-1">
+                  <a href="#"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400">Sign
+                    out</a>
+                </div> -->
+              </div>
+            </li>
+            <li>
+              <a href="#"
+                class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0 ">
+                Subscribe</a>
+            </li>
+          </ul>
+
+        <ul
+          class="flex flex-row font-normal p-0 space-x-2 bg-white absolute top-[14px] md:top-[16px] right-[38px] md:right-[65px]">
+          <!-- <li class="flex-1 hidden lg:block xl:hidden xl:flex-initial">
+            <button id="signInButton"
+              class="w-full flex items-center justify-center gap-2 px-2 py-2 rounded-[50px] border-[1px] border-[#D9D9D9] bg-white">
+              <img src="./assets/png/google-icon.png" alt="" class="w-[20px]">
+              <p>Sign in with Google</p>
+            </button>
+          </li>
+          <li class="flex-1 hidden lg:block xl:hidden xl:flex-initial">
+            <button id="submitResourcesButton" class="w-full px-2 py-2 rounded-[50px] text-white bg-black">
+              Submit Resources
+            </button>
+          </li> -->
+          <li class="flex xl:hidden justify-center gap-1">
+            <button
+              class="h-[28px] w-[28px] md:h-[42px] md:w-[42px] flex items-center justify-center md:px-2 md:py-2 rounded-[50px] border-[1px] border-[#D9D9D9] bg-white">
+              <img src="./assets/png/moon-icon.png" alt="" class="w-[16px] md:w-[20px]">
+            </button>
+            <button class="h-[28px] w-[28px] md:h-[42px] md:w-[42px]] rounded-[50px] border-[1px] border-[#D9D9D9] bg-white">
+              <p class="text-[12px] md:text-base">EN</p>
+            </button>
+          </li>
+        </ul>
         <button data-collapse-toggle="navbar-dropdown" type="button" id="navbar-dropdown-button"
-          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg xl:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-          aria-controls="navbar-dropdown" aria-expanded="false">
-          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M1 1h15M1 7h15M1 13h15" />
-          </svg>
-        </button>
+              class="inline-flex items-center ms-auto p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg xl:hidden "
+              aria-controls="navbar-dropdown" aria-expanded="false">
+              <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 17 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M1 1h15M1 7h15M1 13h15" />
+              </svg>
+            </button>
         <div class="hidden flex-1 xl:flex items-center justify-between md:w-auto" id="navbar-dropdown">
           <ul
-            class="flex flex-col ms-3 font-normal p-4 xl:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 xl:flex-row xl:space-x-2 xl:space-x-5 xl:mt-0 xl:border-0 xl:bg-white ">
+            class="flex lg:hidden xl:flex flex-col ms-3 font-normal p-4 xl:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 xl:flex-row xl:space-x-2 xl:space-x-5 xl:mt-0 xl:border-0 xl:bg-white ">
             <li>
               <a href="#"
                 class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0">Rankings</a>
@@ -116,7 +210,7 @@
             </li>
           </ul>
           <ul
-            class="flex flex-col gap-y-4 ms-3 font-normal p-4 xl:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 xl:flex-row xl:space-x-2 xl:mt-0 xl:border-0 xl:bg-white ">
+            class="flex  xl:flex flex-col w-[89vw] xl:w-auto gap-y-4 ms-3 font-normal p-4 xl:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 xl:flex-row xl:space-x-2 xl:mt-0 xl:border-0 xl:bg-white ">
             <li class="flex-1 xl:flex-initial">
               <button id="signInButton"
                 class="w-full flex items-center justify-center gap-2 px-2 py-2 rounded-[50px] border-[1px] border-[#D9D9D9] bg-white">
@@ -129,8 +223,9 @@
                 Submit Resources
               </button>
             </li>
-            <li class="flex justify-center gap-5 xl:gap-1">
-              <button class="h-[42px] w-[42px] flex items-center justify-center px-2 py-2 rounded-[50px] border-[1px] border-[#D9D9D9] bg-white">
+            <li class="hidden xl:flex justify-center gap-5 xl:gap-1">
+              <button
+                class="h-[42px] w-[42px] flex items-center justify-center px-2 py-2 rounded-[50px] border-[1px] border-[#D9D9D9] bg-white">
                 <img src="./assets/png/moon-icon.png" alt="" class="w-[20px]">
               </button>
               <button class="h-[42px] w-[42px] rounded-[50px] border-[1px] border-[#D9D9D9] bg-white">
@@ -146,23 +241,24 @@
     <!-- Banner  -->
     <section class="containerX home-banner mt-4 p-6 lg:p-12 xl:p-16">
       <div class="home-banner-top">
-        <h1 class="xl:w-[70%] text-3xl md:text-4xl lg:text-[40px] xl:text-[48px]">Discover the latest and most powerful AI resources
+        <h1 class="md:w-[90%] lg:w-[70%] xl:w-[60%] text-[20px] md:text-4xl lg:text-[36px] xl:text-[40px]">Discover the latest and most powerful
+          AI resources
           in one place.</h1>
-        <h6 class="text-sm lg:text-lg xl:text-xl lg:text-2xl">We curate, review, and AI resources, making your selection
+        <h6 class=" xl:w-[60%] text-sm lg:text-lg xl:text-xl">We curate, review, and AI resources, making your <br /> selection
           process
           effortless.</h6>
       </div>
       <div class="home-banner-bottom grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14">
         <div class="col-span-1">
           <div class="flex xl:items-center gap-4">
-            <div class="w-[20%] lg:w-[24%] xl:w-[25%]">
+            <div class="w-[20%] lg:w-[24%] xl:w-[25%] self-center md:self-start">
               <div class="figure">
-                <img src="./assets/png/banner-icon1.png" alt="" class="-ms-8">
+                <img src="./assets/png/banner-icon1.png" alt="" class="-ms-4 md:-ms-8">
               </div>
             </div>
             <div class="flex-1 self-center text-block gap-[8px] xl:gap-[10px]">
-              <h2 class="text-lg lg:text-xl xl:text-2xl font-bold">Explore the Universe of AI:</h2>
-              <p class="text-xs xl:text-base font-normal">
+              <h2 class="text-[13px] md:text-2xl lg:text-lg xl:text-2xl font-bold">Explore the Universe of AI:</h2>
+              <p class="text-[10px] md:text-lg lg:text-xs xl:text-base font-normal">
                 Dive into our comprehensive hub and navigate through a curated collection of AI tools, products, and
                 resources tailored for developers, businesses, and AI enthusiasts.
               </p>
@@ -171,14 +267,14 @@
         </div>
         <div class="col-span-1">
           <div class="flex xl:items-center gap-4">
-            <div class="w-[20%] lg:w-[24%] xl:w-[25%]">
+            <div class="w-[20%] lg:w-[24%] xl:w-[25%] self-center md:self-start">
               <div class="figure">
                 <img src="./assets/png/banner-icon2.png" alt="" class="ms-8">
               </div>
             </div>
             <div class="flex-1 self-center text-block gap-[8px] md:gap-[10px]">
-              <h2 class="text-lg lg:text-xl xl:text-2xl font-bold">Explore the Universe of AI:</h2>
-              <p class="text-xs xl:text-base font-normal">
+              <h2 class="text-[13px] md:text-2xl lg:text-lg xl:text-2xl font-bold">Explore the Universe of AI:</h2>
+              <p class="text-[10px] md:text-lg lg:text-xs xl:text-base font-normal">
                 Dive into our comprehensive hub and navigate through a curated collection of AI tools, products, and
                 resources tailored for developers, businesses, and AI enthusiasts.
               </p>
@@ -187,14 +283,14 @@
         </div>
         <div class="col-span-1">
           <div class="flex xl:items-center gap-4">
-            <div class="w-[20%] lg:w-[24%] xl:w-[25%]">
+            <div class="w-[20%] lg:w-[24%] xl:w-[25%] self-center md:self-start">
               <div class="figure">
                 <img src="./assets/png/banner-icon3.png" alt="" class="">
               </div>
             </div>
             <div class="flex-1 self-center text-block gap-[8px] md:gap-[10px]">
-              <h2 class="text-lg lg:text-xl xl:text-2xl font-bold">Engage in Community Threads:</h2>
-              <p class="text-xs xl:text-base font-normal">
+              <h2 class="text-[13px] md:text-2xl lg:text-lg xl:text-2xl font-bold">Engage in Community Threads:</h2>
+              <p class="text-[10px] md:text-lg lg:text-xs xl:text-base font-normal">
                 Engage in product threads where you can ask questions and receive answers from ai experts and
                 enthusiasts in the community.
               </p>
@@ -203,14 +299,14 @@
         </div>
         <div class="col-span-1">
           <div class="flex xl:items-center gap-4">
-            <div class="w-[20%] lg:w-[24%] xl:w-[25%]">
+            <div class="w-[20%] lg:w-[24%] xl:w-[25%] self-center md:self-start">
               <div class="figure">
                 <img src="./assets/png/banner-icon4.png" alt="" class="">
               </div>
             </div>
             <div class="flex-1  self-center text-block gap-[8px] md:gap-[10px]">
-              <h2 class="text-lg lg:text-xl xl:text-2xl font-bold">Find and Compare AI resources</h2>
-              <p class="text-xs xl:text-base font-normal">
+              <h2 class="text-[13px] md:text-2xl lg:text-lg xl:text-2xl font-bold">Find and Compare AI resources</h2>
+              <p class="text-[10px] md:text-lg lg:text-xs xl:text-base font-normal">
                 Easily discover and bookmark the perfect resources for your tasks using our advanced search, ranking
                 tool and top picks .
               </p>
@@ -618,7 +714,7 @@
               class="absolute top-[10px] left-[10px] p-2 text-base border-[1px] border-white rounded-[10px] text-white bg-[#FFFFFF33]">
               Featured</article>
             <article
-              class="absolute bottom-[10px] right-[10px] p-2 text-base font-bold rounded-[10px] text-black bg-white">
+              class="absolute bottom-[10px] right-[10px] px-[15px] py-[8px] text-[15px] font-bold rounded-[10px] text-black bg-white">
               $12.29 <span class="text-[10px] font-normal">per/mo</span></article>
           </div>
           <div class="card-body flex flex-col gap-3 px-3 py-3">

@@ -169,7 +169,16 @@ input[type=range]::-webkit-slider-runnable-track  {
   background: transparent;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1400px) {
+
+  .containerX {
+    width: 1300px;
+    margin: auto;
+  }
+  
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
   .containerX {
     width: 1160px;
     margin: auto;

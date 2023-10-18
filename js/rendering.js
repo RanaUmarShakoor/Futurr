@@ -77,7 +77,7 @@ function display(card) {
   );
 
   let premiumMarkup = `
-<div class="h-[42px] px-2 py-2 border-[1px] border-[#D9D9D9] rounded-[8px]">
+<div class="h-[42px] px-[15px] py-[8px] text-[15px] border-[1px] border-[#D9D9D9] rounded-[8px]">
 Premium
 </div>`;
 
@@ -87,7 +87,7 @@ Premium
       <img src="${card.photo_url}" alt="">
       ${
         card.is_featured
-          ? '<article class="absolute top-[10px] left-[10px] p-2 text-base border-[1px] border-white rounded-[10px] text-white bg-[#FFFFFF33]">Featured</article>'
+          ? '<article class="absolute top-[10px] left-[10px] px-[15px] py-[8px] text-[15px] border-[1px] border-white rounded-[10px] text-white bg-[#FFFFFF33]">Featured</article>'
           : ""
       }
       <article class="absolute bottom-[10px] right-[10px] p-2 text-base font-bold rounded-[10px] text-black bg-white">${priceM}</article>
