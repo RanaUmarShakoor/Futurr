@@ -297,17 +297,17 @@ function displaySmallCard(card) {
   let markup = `
     <div class="card col-span-1 flex border-[1px] border-[#D9D9D9] rounded-[20px] shadow-lg">
 
-          <div class="card-img w-[50%] lg:w-[45%] h-full p-2 flex items-center overflow-hidden relative">
-            <img src="${card.photo_url}" alt="" class="w-full lg:h-[100px] xl:h-[120px] object-cover rounded-[19px]">
+          <div class="card-img w-[50%] lg:w-[45%] h-full p-3 flex items-center overflow-hidden relative">
+            <img src="${card.photo_url}" alt="" class="w-full lg:h-[100%] xl:h-[100%] object-cover rounded-[19px]">
             <article class="price-tag absolute top-[14px] right-[14px] p-1 text-xs rounded-[8px] bg-white z-10">From
               $${card.price}</article>
           </div>
 
           <div class="card-body flex-1 flex flex-col gap-1 pe-2 py-3">
             <div class="flex items-center gap-3">
-              <h1 class="small-card-title text-[13px] xl:text-[15px] font-medium text-black">${card.title}</h1>
+              <h1 class="small-card-title text-[12px] xl:text-[15px] font-medium text-black">${card.title}</h1>
             </div>
-            <div class="flex flex-col gap-1">
+            <div class="flex flex-col mt-3 md:mt-0 lg:mt-1">
               <article class="flex items-center gap-1">
                 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13" viewBox="0 0 15 13" fill="none" class="h-[10px] xl:h-[13px]">
                   <path
@@ -325,7 +325,7 @@ function displaySmallCard(card) {
                 <p class="small-card-text text-[9px] xl:text-[13px] text-[#585858]">${card.location}</p>
               </article>
             </div>
-            <div class="small-card-actions flex justify-between pt-2 mt-auto lg:pt-0">
+            <div class="small-card-actions flex justify-between pt-2 mt-auto lg:pt-2">
               <button
                 class="h-[20px] xl:h-[25px] w-[50px] xl:w-[60px] flex items-center justify-center border-[1px] border-[#D9D9D9] bg-black rounded-[100px]">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none"

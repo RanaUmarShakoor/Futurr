@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="./css/image-uploader.min.css">
   <link rel="stylesheet" href="./css/style.css">
   <script src="https://cdn.tailwindcss.com"></script>
+  
   <script>
     tailwind.config = {
       theme: {
@@ -33,7 +34,7 @@
 <body>
   <main class="h-screen overflow-y-auto">
 
-    <nav class="containerX bg-white border-gray-200 relative">
+    <nav class=" bg-white border-gray-200 relative w-[90%] mx-auto">
       <div
         class="max-w-screen-xl flex flex-wrap items-center justify-between lg:justify-start gap-x-[100px] md:gap-x-[500px] lg:gap-0 mx-auto py-2 md:py-4">
         <a href="#" class="flex items-center">
@@ -44,26 +45,26 @@
             class="hidden lg:flex xl:hidden flex-col font-normal p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 lg:flex-row lg:space-x-1 lg:mt-0 lg:border-0 lg:bg-white ">
             <li>
               <a href="#"
-                class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0">Rankings</a>
+                class="block py-2 pl-3 pr-4 text-[15px] font-[600] text-black rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0">Rankings</a>
             </li>
 
             <li>
               <a href="#"
-                class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0">BookMarks</a>
+                class="block py-2 pl-3 pr-4 text-[15px] font-[600] text-black rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0">BookMarks</a>
             </li>
             <li>
               <a href="#"
-                class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0 ">Categories</a>
+                class="block py-2 pl-3 pr-4 text-[15px] font-[600] text-black rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0 ">Categories</a>
             </li>
             <li>
               <a href="#"
-                class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0 ">GPT
+                class="block py-2 pl-3 pr-4 text-[15px] font-[600] text-black rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0 ">GPT
                 Plugins</a>
             </li>
             <li>
               <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
-                class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-black rounded  xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0 xl:w-auto">Resources
-                <svg class="w-2.5 h-2.5 ml-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-black rounded  xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0 xl:w-auto text-[15px] font-[600]">Resources
+                <svg class="w-2.5 h-2.5 ml-1.5 mt-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                   viewBox="0 0 10 6">
                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                     d="m1 1 4 4 4-4" />
@@ -103,7 +104,7 @@
             </li>
             <li>
               <a href="#"
-                class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0 ">
+                class="block py-2 pl-3 pr-4 text-[15px] font-[600] text-black rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0 ">
                 Subscribe</a>
             </li>
           </ul>
@@ -127,124 +128,131 @@
               class="h-[28px] w-[28px] md:h-[42px] md:w-[42px] flex items-center justify-center md:px-2 md:py-2 rounded-[50px] border-[1px] border-[#D9D9D9] bg-white">
               <img src="./assets/png/moon-icon.png" alt="" class="w-[16px] md:w-[20px]">
             </button>
-            <button class="h-[28px] w-[28px] md:h-[42px] md:w-[42px] rounded-[50px] border-[1px] border-[#D9D9D9] bg-white">
+            <button class="ml-1 h-[28px] w-[28px] md:h-[42px] md:w-[42px] rounded-[50px] border-[1px] border-[#D9D9D9] bg-white">
               <p class="text-[12px] md:text-base">EN</p>
             </button>
           </li>
         </ul>
+
         <button data-collapse-toggle="navbar-dropdown" type="button" id="navbar-dropdown-button"
-              class="inline-flex items-center ms-auto p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg xl:hidden "
-              aria-controls="navbar-dropdown" aria-expanded="false">
-              <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                viewBox="0 0 17 14">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M1 1h15M1 7h15M1 13h15" />
-              </svg>
-            </button>
-        <div class="hidden flex-1 xl:flex items-center justify-between md:w-auto" id="navbar-dropdown">
-          <ul
-            class="flex lg:hidden xl:flex flex-col ms-3 font-normal p-4 xl:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 xl:flex-row xl:space-x-2 xl:space-x-5 xl:mt-0 xl:border-0 xl:bg-white ">
-            <li>
-              <a href="#"
-                class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0">Rankings</a>
-            </li>
+        class="inline-flex items-center ms-auto p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg xl:hidden "
+        aria-controls="navbar-dropdown" aria-expanded="false">
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+          viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M1 1h15M1 7h15M1 13h15" />
+        </svg>
+      </button>
+  <div class="hidden flex-1 xl:flex items-center justify-between md:w-auto" id="navbar-dropdown">
+    <ul
+      class="flex lg:hidden xl:flex flex-col ms-3 font-normal p-4 xl:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 xl:flex-row xl:space-x-2 xl:space-x-5 xl:mt-0 xl:border-0 xl:bg-white ">
+      <li>
+        <a href="#"
+          class="block py-2 text-[15px] font-[600]  text-black rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0">Rankings</a>
+      </li>
 
-            <li>
-              <a href="#"
-                class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0">BookMarks</a>
-            </li>
-            <li>
-              <a href="#"
-                class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0 ">Categories</a>
-            </li>
-            <li>
-              <a href="#"
-                class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0 ">GPT
-                Plugins</a>
-            </li>
-            <li>
-              <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
-                class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0 xl:w-auto">Resources
-                <svg class="w-2.5 h-2.5 ml-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                  viewBox="0 0 10 6">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                    d="m1 1 4 4 4-4" />
-                </svg></button>
+      <li>
+        <a href="#"
+          class="block py-2 text-[15px] font-[600] text-black rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0">Bookmarks</a>
+      </li>
+      <li>
+        <a href="#"
+          class="block py-2 text-[15px] font-[600] text-black rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0 ">Categories</a>
+      </li>
+      <li>
+        <a href="#"
+          class="block py-2 text-[15px] font-[600] text-black rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0 ">GPT
+          Plugins</a>
+      </li>
+      <li>
+        <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
+          class="flex items-center justify-between w-full py-2 text-black rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0 xl:w-auto text-[15px] font-[600]">Resources
+          <svg class="w-2.5 h-2.5 ml-1.5 mt-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 10 6"
+            >
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+              d="m1 1 4 4 4-4" />
+          </svg></button>
 
 
-              <div id="dropdownNavbar"
-                class=" xl:absolute z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg border-[2px] border-[#D9D9D9]">
-                <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">News</a>
-                  </li>
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">AI
-                      Prompts</a>
-                  </li>
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">AI Jobs</a>
-                  </li>
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">Events</a>
-                  </li>
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">Glossary</a>
-                  </li>
-                  <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">FAQ</a>
-                  </li>
-
-                </ul>
-                <!-- <div class="py-1">
-                  <a href="#"
-                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400">Sign
-                    out</a>
-                </div> -->
-              </div>
+        <div id="dropdownNavbar"
+          class=" xl:absolute z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg border-[2px] border-[#D9D9D9]">
+          <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">News</a>
             </li>
             <li>
-              <a href="#"
-                class="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0 ">
-                Subscribe</a>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">AI
+                Prompts</a>
             </li>
-          </ul>
-          <ul
-            class="flex  xl:flex flex-col w-[89vw] xl:w-auto gap-y-4 ms-3 font-normal p-4 xl:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 xl:flex-row xl:space-x-2 xl:mt-0 xl:border-0 xl:bg-white ">
-            <li class="flex-1 xl:flex-initial">
-              <button id="signInButton"
-                class="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-[50px] border-[1px] border-[#D9D9D9] bg-white">
-                <img src="./assets/png/google-icon.png" alt="" class="w-[20px]">
-                <p>Sign in with Google</p>
-              </button>
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">AI Jobs</a>
             </li>
-            <li class="flex-1 xl:flex-initial">
-              <button id="submitResourcesButton" class="w-full px-3 py-2 rounded-[50px] text-white bg-black">
-                Submit Resources
-              </button>
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">Events</a>
             </li>
-            <li class="hidden xl:flex justify-center gap-5 xl:gap-1">
-              <button
-                class="h-[42px] w-[42px] flex items-center justify-center px-2 py-2 rounded-[50px] border-[1px] border-[#D9D9D9] bg-white">
-                <img src="./assets/png/moon-icon.png" alt="" class="w-[20px]">
-              </button>
-              <button class="h-[42px] w-[42px] rounded-[50px] border-[1px] border-[#D9D9D9] bg-white">
-                <p>EN</p>
-              </button>
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">Glossary</a>
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">FAQ</a>
             </li>
 
           </ul>
+          <!-- <div class="py-1">
+            <a href="#"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400">Sign
+              out</a>
+          </div> -->
         </div>
+      </li>
+      <li>
+        <a href="#"
+          class="block py-2 text-[15px] font-[600] text-black rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-700 xl:p-0 ">
+          Subscribe</a>
+      </li>
+    </ul>
+    <ul
+      class="flex  xl:flex flex-col w-[89vw] xl:w-auto gap-y-4 ms-3 font-normal p-4 xl:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 xl:flex-row xl:space-x-2 xl:mt-0 xl:border-0 xl:bg-white ">
+      <li class="flex-1 xl:flex-initial">
+        <button id="signInButton"
+          class="w-full flex text-[15px] font-[600] items-center justify-center gap-2 px-3 py-2 rounded-[50px] border-[1px] border-[#D9D9D9] bg-white">
+          <img src="./assets/png/google-icon.png" alt="" class="w-[20px]">
+          <p>Sign in with Google</p>
+        </button>
+      </li>
+      <li class="flex-1 xl:flex-initial">
+        <button id="submitResourcesButton" class="w-full px-4 text-[15px] font-[600] py-2 rounded-[50px] text-white bg-black">
+          Submit Resources
+        </button>
+      </li>
+      <li class="hidden xl:flex justify-center gap-5 xl:gap-1">
+        <button
+          class="h-[42px] w-[42px] flex items-center justify-center px-2 py-2 rounded-[50px] border-[1px] border-[#D9D9D9] bg-white">
+          <img src="./assets/png/moon-icon.png" alt="" class="w-[20px]">
+        </button>
+        <button class="ml-1 h-[42px] w-[42px] rounded-[50px] border-[1px] border-[#D9D9D9] bg-white">
+          <p>EN</p>
+        </button>
+      </li>
+
+    </ul>
+  </div>
+
+
+
+
+
       </div>
     </nav>
 
     <!-- Banner  -->
-    <section class="containerX home-banner mt-4 p-6 lg:pb-12 lg:px-12 lg:pt-[22px] xl:px-16 xl:pb-16 xl:pt-[36px]">
+    <section class="w-[90%] mx-auto home-banner mt-4 p-6 lg:pb-12 lg:px-12 lg:pt-[22px] xl:px-16 xl:pb-16 xl:pt-[36px]">
       <div class="home-banner-top">
-        <h1 class="md:w-[78%] lg:w-[70%] xl:w-[60%] text-[20px] md:text-[28px] lg:text-[36px] xl:text-[40px]">Discover the latest and most powerful
+        <h1 class="md:w-[78%] lg:w-[70%] xl:w-[60%] text-[14px] md:text-[28px] lg:text-[30px] xl:text-[35px]">Discover the latest and most powerful
           AI resources
           in one place.</h1>
-        <h6 class=" xl:w-[60%] text-sm lg:text-lg xl:text-xl">We curate, review, and AI resources, making your <br /> selection
+        <h6 class=" xl:w-[60%] text-[10px] md:text-sm lg:text-lg xl:text-xl">We curate, review, and AI resources, making your <br /> selection
           process
           effortless.</h6>
       </div>
@@ -273,10 +281,9 @@
               </div>
             </div>
             <div class="flex-1 self-center text-block gap-[8px] md:gap-[10px]">
-              <h2 class="text-[13px] md:text-2xl lg:text-lg xl:text-2xl font-bold">Explore the Universe of AI:</h2>
+              <h2 class="text-[13px] md:text-2xl lg:text-lg xl:text-2xl font-bold">Shape the Future of AI:</h2>
               <p class="text-[10px] md:text-lg lg:text-xs xl:text-base font-normal">
-                Dive into our comprehensive hub and navigate through a curated collection of AI tools, products, and
-                resources tailored for developers, businesses, and AI enthusiasts.
+                Join the movement! Contribute to and leverage community-driven insights, trends, and future directions in AI, derived from vast data sources. 
               </p>
             </div>
           </div>
@@ -317,7 +324,7 @@
     </section>
 
     <!-- Filters Section  -->
-    <section class="containerX py-4 md:py-10">
+    <section class="w-[90%] mx-auto py-4 md:py-10">
       <div class="grid grid-cols-10 lg:grid-cols-30 gap-4">
 
         <div class="col-span-10 sm:col-span-6 lg:col-span-9 xl:col-span-10 flex flex-col gap-2">
@@ -468,14 +475,14 @@
             </button>
             <!-- Dropdown menu -->
             <div id="dropdownFilter"
-              class="z-10 hidden top-[70px] divide-y divide-gray-100 rounded-lg shadow w-[90vw] md:w-[60vw] px-3 py-5 right-0 bg-[#F4F4F4]">
+              class="z-10 hidden top-[70px] divide-y divide-gray-100 rounded-lg shadow w-[90vw] md:w-[60vw] px-3 py-5 right-0 bg-[#F4F4F4] shadow-lg shadow-grey-600">
               <div class="w-full grid grid-cols-3 gap-4">
                 <div class="col-span-1 flex flex-col gap-2">
                   <label for="">Features</label>
                   <div class="relative overflow-y-visible">
 
                     <button id="dropdownFeatureButton" data-dropdown-toggle="dropdownFeatures"
-                      class="w-full flex items-center justify-between px-5 py-3 text-base text-black rounded-[12px] bg-white"
+                      class="w-full flex items-center justify-between px-2 md:px-5 py-3 text-[13px] md:text-base text-black rounded-[12px] bg-white"
                       type="button">Website <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -509,7 +516,7 @@
                   <div class="relative overflow-y-visible">
 
                     <button id="dropdownRatingsButton" data-dropdown-toggle="dropdownRatings"
-                      class="w-full flex items-center justify-between px-5 py-3 text-base text-black rounded-[12px] bg-white"
+                      class="w-full flex items-center justify-between px-2 md:px-5 py-3 text-[13px] md:text-base text-black rounded-[12px] bg-white"
                       type="button">4 & Up <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -543,7 +550,7 @@
                   <div class="relative overflow-y-visible">
 
                     <button id="dropdownLanguagesButton" data-dropdown-toggle="dropdownLanguages"
-                      class="w-full flex items-center justify-between px-5 py-3 text-base text-black rounded-[12px] bg-white"
+                      class="w-full flex items-center justify-between px-2 md:px-5 py-3 text-[13px] md:text-base text-black rounded-[12px] bg-white"
                       type="button">All <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -700,8 +707,8 @@
     </section>
 
     <!-- Trending Tools Section  -->
-    <section class="containerX flex flex-col gap-2 py-8">
-      <div class="flex justify-between w-full md:w-[97%] mx-auto">
+    <section class="w-[90%] mx-auto flex flex-col gap-2 py-8">
+      <div class="flex justify-between ">
         <h1 class="text-lg md:text-3xl lg:text-[32px] font-medium">Trending Tools <span
             class="text-[#656565]">(351)</span></h1>
         <a href="" class="text-sm md:text-base text-[#406BDA] self-center">See all</a>
@@ -907,8 +914,8 @@
     </section>
 
     <!-- Popular Plugins Section -->
-    <section class="containerX flex flex-col gap-2 py-8">
-      <div class="flex justify-between w-full md:w-[97%] mx-auto">
+    <section class="w-[90%] mx-auto flex flex-col gap-2 py-8">
+      <div class="flex justify-between ">
         <h1 class="text-lg md:text-3xl lg:text-[32px] font-medium">Popular Plugins <span
             class="text-[#656565]">(17)</span></h1>
         <a href="" class="text-sm md:text-base text-[#406BDA] self-center">See all</a>
@@ -1115,8 +1122,8 @@
     </section>
 
     <!-- Top Picks by Futurrists Section -->
-    <section class="containerX flex flex-col gap-2 py-8">
-      <div class="flex justify-between w-full md:w-[97%] mx-auto">
+    <section class="w-[90%] mx-auto flex flex-col gap-2 py-8">
+      <div class="flex justify-between ">
         <h1 class="text-lg md:text-3xl lg:text-[32px] font-medium">Top Picks by Futurrists <span
             class="text-[#656565]">(17)</span></h1>
         <a href="" class="text-sm md:text-base text-[#406BDA] self-center">See all</a>
@@ -1371,13 +1378,13 @@
 
 
     <!-- Latest AI News Section  -->
-    <section class="containerX flex flex-col gap-2 py-8">
-      <div class="flex justify-between w-full md:w-[97%] mx-auto">
+    <section class="w-[90%] mx-auto flex flex-col gap-4 lg:gap-8 py-8">
+      <div class="flex justify-between ">
         <h1 class="text-lg md:text-3xl lg:text-[32px] font-medium">Latest AI News <span class="text-[#656565]"></span>
         </h1>
         <a href="" class="text-sm md:text-base text-[#406BDA] self-center">Explore More</a>
       </div>
-      <div id="latestAINews" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5  md:px-[10px]">
+      <div id="latestAINews" class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5  ">
 
         <div class="card col-span-1 flex flex-col border-[1px] border-[#D9D9D9] rounded-[20px] shadow-lg">
           <div class="card-img rounded-t-[20px] overflow-hidden">
@@ -1385,7 +1392,7 @@
           </div>
           <div class="card-body flex flex-col gap-3 px-3 py-3">
             <div class="flex items-center gap-3">
-              <h1 class="text-base md:text-sm lg:text-lg font-medium text-black">US military needs AI vehicles, weapon
+              <h1 class="text-base md:text-sm lg:text-lg  font-medium text-black">US military needs AI vehicles, weapon
                 systems to
                 be 'superior' global force: experts</h1>
             </div>
@@ -1515,13 +1522,13 @@
 
 
     <!-- Upcoming AI Events Section  -->
-    <section class="containerX flex flex-col gap-3 py-8">
-      <div class="flex justify-between w-full md:w-[97%] mx-auto">
+    <section class="w-[90%] mx-auto flex flex-col gap-4 lg:gap-8 py-8">
+      <div class="flex justify-between ">
         <h1 class="text-lg md:text-3xl lg:text-[32px] font-medium">Upcoming AI Events <span
             class="text-[#656565]"></span></h1>
         <a href="" class="text-sm md:text-base text-[#406BDA] self-center">Explore More</a>
       </div>
-      <div id="upcomingAIEvents" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:px-[10px]">
+      <div id="upcomingAIEvents" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ">
 
         <!-- <div class="card col-span-1 flex border-[1px] border-[#D9D9D9] rounded-[20px] shadow-lg">
 
@@ -1596,8 +1603,8 @@
 
 
     <!-- Top 100 AI Tools Section  -->
-    <section class="containerX flex flex-col gap-2 py-8">
-      <div class="flex justify-between w-full md:w-[97%] mx-auto">
+    <section class="w-[90%] mx-auto flex flex-col gap-4 lg:gap-8 py-8">
+      <div class="flex justify-between ">
         <h1 class="text-xl md:text-3xl lg:text-[32px] font-medium">Top 100 AI Tools<span class="text-[#656565]"></span>
         </h1>
       </div>
@@ -1820,7 +1827,7 @@
 
       </div>
 
-      <div class="mt-8 text-center">
+      <div class="my-8 text-center">
         <button class="text-base md:text-xl px-10 py-3 font-semibold md:font-bold text-white bg-black rounded-[100px]">
           See More
         </button>
@@ -2125,7 +2132,7 @@
 
     <!-- Footer  -->
     <footer class="bg-black text-white">
-      <div class="containerX flex flex-col py-6 md:pt-10">
+      <div class="w-[90%] mx-auto flex flex-col py-6 md:pt-10">
 
         <div class="flex flex-col md:flex-row gap-8 md:gap-4 lg:gap-4 xl:gap-8 pb-10 border-b-[2px] border-[#D9D9D933]">
           <div class="md:w-1/4 lg:w-1/3 flex ">
@@ -2145,7 +2152,7 @@
             <p class="text-xs lg:text-sm">Don't miss out on the latest AI trends and news</p>
             <div class="flex border-[1px] border-[#FFFFFF33] rounded-[10px]">
               <input type="email" name="" id="" placeholder="Your Email"
-                class="flex-1 px-5 text-xs lg:text-sm bg-transparent">
+                class="flex-1 px-5 text-xs lg:text-sm bg-transparent ">
               <button class="px-3 md:px-4 py-2 md:py-3 rounded-[9px] bg-[#0047FF]">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="23" viewBox="0 0 20 23" fill="none">
                   <path
@@ -2182,6 +2189,7 @@
   <script src="./js/owl.carousel.min.js"></script>
   <script src="./js/rendering.js"></script>
   <script src="./js/custom.js"></script>
+  
 </body>
 
 </html>
