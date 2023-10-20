@@ -72,7 +72,9 @@ function displayCard1(card) {
   for (let i = 0; i < card.tags.length; i++) {
     tagsMarkup += `
     <p
-        class="p-[4px] xl:p-[8px] text-[11px] xl:text-xs border-[1px] border-[#D9D9D9] rounded-[30px] hover:bg-black hover:text-white"
+        class="p-[4px] xl:p-[8px] text-[11px] xl:text-[12px] border-[1px] border-[#D9D9D9] rounded-[30px] hover:bg-[#1E1E1E] hover:text-white"
+  style="font-weight: 400;"
+
     >
         #${card.tags[i]}
     </p>`;
@@ -87,20 +89,22 @@ function displayCard1(card) {
   // );
 
   let premiumMarkup = `
-  <div class="h-[34px] xl:h-[42px] px-3 xl:px-[15px] py-1 xl:py-[8px] text-[15px] border-[1px] border-[#D9D9D9] rounded-[8px]">
+  <div class="h-[34px] xl:h-[42px] px-3 xl:px-[15px] py-1 xl:py-[8px] text-[15px] border-[1px] border-[#D9D9D9] rounded-[8px]"
+  style="font-weight: 400;"
+  >
   Premium
   </div>`;
 
   let markup = `
-    <div class="card col-span-1 flex flex-col border-[1px] border-[#D9D9D9] rounded-[20px] shadow-lg">
-    <div class="card-img rounded-[20px] overflow-hidden relative">
-      <img src="${card.photo_url}" alt="">
+    <div class=" card col-span-1 flex flex-col border-[1px] border-[#D9D9D9] rounded-[20px] shadow-sm shadow-[#D9D9D9]">
+    <div class="card-img rounded-[20px] overflow-hidden relative border-[1px] border-[#D9D9D9]">
+      <img src="${card.photo_url}" alt="" class="">
       ${
         card.is_featured
-          ? '<article class="absolute top-[10px] left-[10px] px-[10px] xl:px-[15px] py-[5px] xl:py-[8px] text-[13px] xl:text-[15px] border-[1px] border-white rounded-[10px] text-white bg-[#FFFFFF33]">Featured</article>'
+          ? '<article class="absolute top-[13px] left-[13px] px-[10px] xl:px-[18px] py-[5px] xl:py-[8px] text-[13px] xl:text-[15px] border-[1px] border-white rounded-[10px] text-white bg-[#FFFFFF33]">Featured</article>'
           : ""
       }
-      <article class="absolute bottom-[10px] right-[10px] px-[10px] xl:px-[15px] py-[5px] xl:py-[8px] text-[13px] xl:text-[15px] font-bold rounded-[10px] text-black bg-white">${priceM}</article>
+      <article class="absolute bottom-[13px] right-[13px] px-[10px] xl:px-[15px] py-[5px] xl:py-[8px] text-[13px] xl:text-[15px] font-bold rounded-[10px] text-[#1E1E1E] bg-white border-[1px] border-[#D9D9D9]">${priceM}</article>
     </div>
     <div class="card-body flex flex-col gap-3 px-3 py-3">
       <div class="card-actions flex justify-between">
@@ -126,7 +130,7 @@ function displayCard1(card) {
         </div>
       </div>
       <div class="flex items-center gap-2">
-        <h1 class="text-xl xl:text-2xl font-bold text-black">${card.title}</h1>
+        <h1 class="text-xl xl:text-2xl font-bold text-[#1E1E1E]">${card.title}</h1>
         ${
           card.is_verified
             ? `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -138,7 +142,7 @@ function displayCard1(card) {
         }
       </div>
       <p class="text-sm xl:text-base text-[#585858]">${card.desc}</p>
-      <div class="card-tags flex flex-wrap gap-1">
+      <div class="card-tags flex flex-wrap gap-[2px] xl:gap-1 ">
         ${tagsMarkup}
       </div>
     </div>
@@ -161,7 +165,7 @@ function displayCard2(card) {
   for (let i = 0; i < card.tags.length; i++) {
     tagsMarkup += `
     <p
-      class="p-[4px] xl:p-[8px] text-[11px] xl:text-xs border-[1px] border-[#D9D9D9] rounded-[30px] hover:bg-black hover:text-white"
+      class="p-[4px] xl:p-[8px] text-[11px] xl:text-xs border-[1px] border-[#D9D9D9] rounded-[30px] hover:bg-[#1E1E1E] hover:text-white"
     >
         #${card.tags[i]}
     </p>`;
@@ -173,19 +177,19 @@ Premium
 </div>`;
 
   let markup = `
-    <div class="card col-span-1 flex flex-col border-[1px] border-[#D9D9D9] rounded-[20px] shadow-lg">
-          <div class="card-img grid grid-cols-2 rounded-[20px] overflow-hidden relative">
+    <div class="card col-span-1 flex flex-col border-[1px] border-[#D9D9D9] rounded-[20px] shadow-sm">
+          <div class="card-img grid grid-cols-2 rounded-[20px] border-[1px] border-[#D9D9D9] overflow-hidden relative">
             <img src="${card.photo_url1}" alt="">
             <img src="${card.photo_url2}" alt="">
             <img src="${card.photo_url3}" alt="">
             <img src="${card.photo_url4}" alt="">
             ${
               card.is_featured
-                ? '<article class="absolute top-[10px] left-[10px] left-[10px] px-[15px] py-[8px] text-[15px] border-[1px] border-white rounded-[10px] text-white bg-[#FFFFFF33]">Featured</article>'
+                ? '<article class="absolute top-[13px] left-[15px]  px-[15px] py-[8px] text-[15px] border-[1px] border-white rounded-[10px] text-white bg-[#FFFFFF33]">Featured</article>'
                 : ""
             }
             <button
-              class="absolute bottom-[10px] right-[10px] p-2 flex items-center gap-1 text-base rounded-[10px] text-black bg-white">
+              class="absolute bottom-[13px] right-[13px] p-2 flex items-center gap-1 text-base rounded-[10px] text-[#1E1E1E] bg-white border-[1px] border-[#D9D9D9]">
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" fill="none">
                 <path
                   d="M0.84544 0H12.6816C13.1485 0 13.527 0.3731 13.527 0.833333V16.7861C13.527 17.0162 13.3377 17.2028 13.1043 17.2028C13.0249 17.2028 12.9471 17.1807 12.8798 17.1391L6.76352 13.3594L0.64726 17.1391C0.449461 17.2613 0.188584 17.2024 0.064566 17.0074C0.0223786 16.9411 0 16.8644 0 16.7861V0.833333C0 0.3731 0.37852 0 0.84544 0ZM11.8362 1.66667H1.69088V14.527L6.76352 11.3923L11.8362 14.527V1.66667Z"
@@ -244,25 +248,25 @@ Premium
 
 function displayCard3(card) {
   let markup = `
-    <div class="card col-span-1 flex flex-col border-[1px] border-[#D9D9D9] rounded-[20px] shadow-lg">
+    <div class="card col-span-1 flex flex-col border-[1px] border-[#D9D9D9] rounded-[20px] shadow-sm">
           <div class="card-img rounded-t-[20px] overflow-hidden">
             <img src="${card.photo_url}" alt="">
           </div>
           <div class="card-body flex flex-col gap-3 px-3 py-3">
             <div class="flex items-center gap-3">
-              <h1 class="text-[13px] md:text-[13px] xl:text-lg font-medium text-black">${card.title}</h1>
+              <h1 class="text-[13px] md:text-[13px] xl:text-lg font-medium text-[#1E1E1E]">${card.title}</h1>
             </div>
             <p class="text-[10px] md:text-[11px] xl:text-base text-[#585858]">${card.desc}</p>
             <div class="card-actions flex justify-between mt-[8px] xl:mt-5">
             <div
-                class="h-[34px] xl:h-[42px] w-[85px] xl:w-[95px] flex items-center justify-center border-[1px] border-[#D9D9D9] bg-black rounded-[100px]">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                class="h-[34px] xl:h-[42px] w-[85px] xl:w-[95px] flex items-center justify-center border-[1px] border-[#D9D9D9] bg-[#1E1E1E] rounded-[100px]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" viewBox="0 0 18 18" fill="none">
                   <path
                     d="M7 3V5H2V16H13V11H15V17C15 17.5523 14.5523 18 14 18H1C0.44772 18 0 17.5523 0 17V4C0 3.44772 0.44772 3 1 3H7ZM18 0V8H16L15.9999 3.413L8.2071 11.2071L6.79289 9.7929L14.5849 2H10V0H18Z"
                     fill="white" />
                 </svg>
               </div>
-              <div class="flex gap-2">
+              <div class="flex gap-1">
                 <button
                   class="h-[34px] w-[34px] xl:h-[42px] xl:w-[42px] flex items-center justify-center border-[1px] border-[#D9D9D9] rounded-[8px]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="17" height="18" viewBox="0 0 17 18" fill="none">
@@ -272,7 +276,7 @@ function displayCard3(card) {
                   </svg>
                 </button>
                 <button
-                  class="h-[34px] w-[34px] xl:h-[42px] xl:w-[42px] flex items-center justify-center border-[1px] border-[#D9D9D9] rounded-[8px]">
+                  class=" h-[34px] w-[34px] xl:h-[42px] xl:w-[42px] flex items-center justify-center border-[1px] border-[#D9D9D9] rounded-[8px]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" fill="none">
                     <path
                       d="M0.84544 0H12.6816C13.1485 0 13.527 0.3731 13.527 0.833333V16.7861C13.527 17.0162 13.3377 17.2028 13.1043 17.2028C13.0249 17.2028 12.9471 17.1807 12.8798 17.1391L6.76352 13.3594L0.64726 17.1391C0.449461 17.2613 0.188584 17.2024 0.064566 17.0074C0.0223786 16.9411 0 16.8644 0 16.7861V0.833333C0 0.3731 0.37852 0 0.84544 0ZM11.8362 1.66667H1.69088V14.527L6.76352 11.3923L11.8362 14.527V1.66667Z"
@@ -295,17 +299,17 @@ function displaySmallCard(card) {
     priceM = `$${card.price} <span class="text-[10px] font-normal">per/mo</span>`;
 
   let markup = `
-    <div class="card col-span-1 flex border-[1px] border-[#D9D9D9] rounded-[20px] shadow-lg">
+    <div class="card col-span-1 flex border-[1px] border-[#D9D9D9] rounded-[20px] shadow-sm">
 
-          <div class="card-img w-[50%] lg:w-[45%] h-full p-3 flex items-center overflow-hidden relative">
+          <div class="card-img w-[50%] lg:w-[50%] xl:w-[50%]  h-full p-3 flex items-center overflow-hidden relative">
             <img src="${card.photo_url}" alt="" class="w-full lg:h-[100%] xl:h-[100%] object-cover rounded-[19px]">
-            <article class="price-tag absolute top-[14px] right-[14px] p-1 text-xs rounded-[8px] bg-white z-10">From
+            <article class="price-tag absolute top-[18px] right-[18px] p-1 text-xs rounded-[8px] bg-white z-10">From
               $${card.price}</article>
           </div>
 
           <div class="card-body flex-1 flex flex-col gap-1 pe-2 py-3">
             <div class="flex items-center gap-3">
-              <h1 class="small-card-title text-[12px] xl:text-[15px] font-medium text-black">${card.title}</h1>
+              <h1 class="small-card-title text-[12px] xl:text-[15px] font-medium text-[#1E1E1E]">${card.title}</h1>
             </div>
             <div class="flex flex-col mt-3 md:mt-0 lg:mt-1">
               <article class="flex items-center gap-1">
@@ -327,9 +331,9 @@ function displaySmallCard(card) {
             </div>
             <div class="small-card-actions flex justify-between pt-2 mt-auto lg:pt-2">
               <button
-                class="h-[20px] xl:h-[25px] w-[50px] xl:w-[60px] flex items-center justify-center border-[1px] border-[#D9D9D9] bg-black rounded-[100px]">
+                class="h-[20px] xl:h-[25px] w-[50px] xl:w-[60px] flex items-center justify-center border-[1px] border-[#D9D9D9] bg-[#1E1E1E] rounded-[100px]">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none"
-                  class="small-card-icons h-[14px] xl:h-[16px] w-[14px] xl:w-[16px]">
+                  class="small-card-icons h-[10px] xl:h-[12px] w-[10px] xl:w-[12px]">
                   <path
                     d="M7 3V5H2V16H13V11H15V17C15 17.5523 14.5523 18 14 18H1C0.44772 18 0 17.5523 0 17V4C0 3.44772 0.44772 3 1 3H7ZM18 0V8H16L15.9999 3.413L8.2071 11.2071L6.79289 9.7929L14.5849 2H10V0H18Z"
                     fill="white" />
@@ -339,7 +343,7 @@ function displaySmallCard(card) {
                 <button
                   class="h-[20px] xl:h-[25px] w-[20px] xl:w-[25px] flex items-center justify-center border-[1px] border-[#D9D9D9] rounded-[8px]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="17" height="18" viewBox="0 0 17 18" fill="none"
-                    class="small-card-icons h-[14px] xl:h-[16px] w-[14px] xl:w-[16px]">
+                    class="small-card-icons h-[10px] xl:h-[12px] w-[10px] xl:w-[12px]">
                     <path
                       d="M9.93383 13.186L6.43473 11.2773C5.82645 11.9274 4.96083 12.3337 4.00033 12.3337C2.15938 12.3337 0.666992 10.8412 0.666992 9.00033C0.666992 7.15938 2.15938 5.66699 4.00033 5.66699C4.96078 5.66699 5.82637 6.07321 6.43464 6.72321L9.93383 4.8146C9.86841 4.554 9.83366 4.28122 9.83366 4.00033C9.83366 2.15938 11.3261 0.666992 13.167 0.666992C15.0079 0.666992 16.5003 2.15938 16.5003 4.00033C16.5003 5.84128 15.0079 7.33366 13.167 7.33366C12.2065 7.33366 11.3409 6.92742 10.7326 6.27738L7.23347 8.18599C7.29891 8.44658 7.33366 8.71941 7.33366 9.00033C7.33366 9.28124 7.29892 9.55399 7.2335 9.81458L10.7327 11.7232C11.3409 11.0732 12.2065 10.667 13.167 10.667C15.0079 10.667 16.5003 12.1594 16.5003 14.0003C16.5003 15.8412 15.0079 17.3337 13.167 17.3337C11.3261 17.3337 9.83366 15.8412 9.83366 14.0003C9.83366 13.7194 9.86841 13.4466 9.93383 13.186ZM4.00033 10.667C4.9208 10.667 5.66699 9.92083 5.66699 9.00033C5.66699 8.07983 4.9208 7.33366 4.00033 7.33366C3.07985 7.33366 2.33366 8.07983 2.33366 9.00033C2.33366 9.92083 3.07985 10.667 4.00033 10.667ZM13.167 5.66699C14.0875 5.66699 14.8337 4.9208 14.8337 4.00033C14.8337 3.07985 14.0875 2.33366 13.167 2.33366C12.2465 2.33366 11.5003 3.07985 11.5003 4.00033C11.5003 4.9208 12.2465 5.66699 13.167 5.66699ZM13.167 15.667C14.0875 15.667 14.8337 14.9208 14.8337 14.0003C14.8337 13.0798 14.0875 12.3337 13.167 12.3337C12.2465 12.3337 11.5003 13.0798 11.5003 14.0003C11.5003 14.9208 12.2465 15.667 13.167 15.667Z"
                       fill="black" />
@@ -348,7 +352,7 @@ function displaySmallCard(card) {
                 <button
                   class="h-[20px] xl:h-[25px] w-[20px] xl:w-[25px] flex items-center justify-center border-[1px] border-[#D9D9D9] rounded-[8px]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" fill="none"
-                    class="small-card-icons h-[14px] xl:h-[16px] w-[14px] xl:w-[16px]">
+                    class="small-card-icons h-[10px] xl:h-[12px] w-[10px] xl:w-[12px]">
                     <path
                       d="M0.84544 0H12.6816C13.1485 0 13.527 0.3731 13.527 0.833333V16.7861C13.527 17.0162 13.3377 17.2028 13.1043 17.2028C13.0249 17.2028 12.9471 17.1807 12.8798 17.1391L6.76352 13.3594L0.64726 17.1391C0.449461 17.2613 0.188584 17.2024 0.064566 17.0074C0.0223786 16.9411 0 16.8644 0 16.7861V0.833333C0 0.3731 0.37852 0 0.84544 0ZM11.8362 1.66667H1.69088V14.527L6.76352 11.3923L11.8362 14.527V1.66667Z"
                       fill="#1E1E1E" />
@@ -417,8 +421,9 @@ function displayRankCard(card) {
   }
 
   let markup = `
+  
     <div
-    class="card col-span-1 flex flex-col md:flex-row items-center justify-between p-4 border-[1px] border-[#D9D9D9] rounded-[20px] shadow-lg">
+    class="card col-span-1 flex flex-col md:flex-row items-center justify-between px-4 py-2 border-[1px] border-[#D9D9D9] rounded-[20px] shadow-sm">
 
     <div class="w-full flex flex-col md:flex-row items-center">
       <div class="rank w-[40px] md:w-[50px] hidden md:flex items-center justify-center ">
@@ -431,12 +436,42 @@ function displayRankCard(card) {
 
       </div>
 
-      <div
-        class="card-img w-full md:w-[120px] lg:w-[140px] xl:w-[170px] h-full p-1 md:p-2 overflow-hidden relative">
+`; 
+if (card.rank < 4) { 
+  markup += `
+  <div
+
+        class="card-img  md:w-[120px] lg:w-[140px] xl:w-[40%] h-full p-1 md:p-2 overflow-hidden relative">
         <img src="${
           card.photo_url
         }" alt="" class="w-full h-full object-cover rounded-[10px]">
       </div>
+      `;
+      }
+      else if (card.rank < 10) {
+        markup += `
+        <div
+      
+              class="ml-5 card-img  md:w-[120px] lg:w-[140px] xl:w-[40%] h-full p-1 md:p-2 overflow-hidden relative">
+              <img src="${
+                card.photo_url
+              }" alt="" class=" w-full h-full object-cover rounded-[10px]">
+            </div>
+            `;
+      }
+      else if (card.rank < 100) {
+        markup += `
+        <div
+      
+              class="ml-2 card-img  md:w-[120px] lg:w-[140px] xl:w-[40%] h-full p-1 md:p-2 overflow-hidden relative">
+              <img src="${
+                card.photo_url
+              }" alt="" class=" w-full h-full object-cover rounded-[10px]">
+            </div>
+            `;
+      }
+  markup += `
+      
 
       <div class="w-full flex items-center gap-2">
       
@@ -450,9 +485,11 @@ function displayRankCard(card) {
       
       
       
-      <div class="flex-1 md:w-auto flex flex-col gap-1 mt-[14px] md:mt-0">
+      <div class="flex-1 md:w-auto flex flex-col gap-1 mt-[14px] md:mt-0 ml-3">
         <div class="flex items-center gap-1 md:gap-3">
-          <h1 class="text-sm md:text-base lg:text-sm lg:text-lg font-medium text-black">${
+          <h1 class="text-sm md:text-base lg:text-sm lg:text-[18px] font-[700] text-[#1E1E1E]"
+        
+          >${
             card.title
           }
           </h1>
@@ -493,7 +530,7 @@ function displayRankCard(card) {
           ${card.likes}
         </button>
         
-        <div class="w-full md:w-auto ms-2 mt-2 md:mt-0 text-xs md:text-[12px] lg:text-base px-3 xl:px-4 py-2 rounded-[100px] text-center text-white bg-black">
+        <div class="w-full md:w-auto ms-2 mt-2 md:mt-0 text-xs md:text-[12px] lg:text-base px-3 xl:px-4 py-2 rounded-[100px] text-center text-white bg-[#1E1E1E]">
           View Report
         </div>
       </div>

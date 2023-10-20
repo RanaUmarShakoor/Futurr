@@ -1,8 +1,18 @@
-html, body {
+@import url('https://v1.fontapi.ir/css/SFProDisplay');
+
+
+
+
+html,
+body {
   max-width: 100vw;
   max-height: 100vh;
   overflow: hidden;
+  font-family: 'SF Pro Display', sans-serif;
+                                                
+
   /* background-color: gray; */
+
 }
 
 .navbar {
@@ -135,7 +145,7 @@ html, body {
   justify-content: space-between;
 }
 
-.owl-theme .owl-nav [class*=owl-]:hover {
+.owl-theme .owl-nav [class*="owl-"]:hover {
   background: none;
 }
 
@@ -166,28 +176,24 @@ input[type="range"]::-webkit-slider-thumb {
   /* transition: background .3s ease-in-out; */
 }
 
-input[type=range]::-webkit-slider-runnable-track  {
+input[type="range"]::-webkit-slider-runnable-track {
   -webkit-appearance: none;
   box-shadow: none;
   border: none;
   background: transparent;
 }
 
-
-@media screen and (min-width:1536px ) and (max-width: 1900px) {
- .mainz
- {
-  width: 80% !important;
- }
+@media screen and (min-width: 1536px) and (max-width: 1900px) {
+  .mainz {
+    width: 80% !important;
+  }
 }
 
 @media screen and (min-width: 1400px) {
-
   .containerX {
     width: 1300px;
     margin: auto;
   }
-  
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1400px) {
@@ -203,8 +209,8 @@ input[type=range]::-webkit-slider-runnable-track  {
     margin: auto;
   }
   .owl-theme .owl-nav {
-    left: -28px;
-    width: calc(100% + 60px);
+    left: -42px;
+    width: calc(100% + 90px);
   }
   .owl-theme .owl-nav button {
     width: 35px;
@@ -214,7 +220,6 @@ input[type=range]::-webkit-slider-runnable-track  {
     width: 30px;
     height: 30px;
   }
-
 }
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
@@ -228,7 +233,7 @@ input[type=range]::-webkit-slider-runnable-track  {
   }
   .owl-theme .owl-nav {
     left: -43px;
-    width: calc(100% + 80px);
+    width: calc(100% + 88px);
   }
   .owl-theme .owl-nav button {
     width: 30px;
@@ -236,7 +241,7 @@ input[type=range]::-webkit-slider-runnable-track  {
   }
 }
 
-@media screen and (min-width: 300px) and (max-width: 786px) {
+@media screen and (min-width: 786px) and (max-width: 786px) {
   .containerX {
     width: 90%;
     margin: auto;
@@ -247,8 +252,8 @@ input[type=range]::-webkit-slider-runnable-track  {
   }
 
   .owl-theme .owl-nav {
-    left: -25px;
-    width: calc(100% + 50px);
+    left: -38px;
+    width: calc(100% + 75px);
   }
   .owl-theme .owl-nav button {
     width: 20px;
@@ -258,7 +263,59 @@ input[type=range]::-webkit-slider-runnable-track  {
     width: 24px;
     height: 24px;
   }
+}
 
+@media screen and (min-width: 300px) and (max-width: 785px) {
+  .owl-theme .owl-nav {
+    display: none !important;
+  }
+  
+}
+
+@media screen and (min-width: 566px) and (max-width: 785px) {
+  .framez
+  {
+    width: 90% !important;
+  }
+  .dive
+  {
+    font-size: 15px !important;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 565px) {
+.dive
+{
+  line-height: 15px !important;
+}
+}
+
+@media screen and (min-width: 381px) and (max-width: 415px) {
+  .explore {
+    font-size: 14px !important;
+  }
+  .dive {
+    font-size: 9px !important;
+  }
+}
+
+@media screen and (min-width: 348px) and (max-width: 381px) {
+  .explore {
+    font-size: 12px !important;
+  }
+  .dive {
+    font-size: 8px !important;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 347px) {
+  .explore {
+    font-size: 11px !important;
+  }
+  .dive {
+    font-size: 6px !important;
+    line-height: 10px !important;
+  }
 }
 
 @media screen and (max-width: 360px) {
@@ -279,4 +336,3 @@ input[type=range]::-webkit-slider-runnable-track  {
     height: 10px !important;
   }
 }
-
