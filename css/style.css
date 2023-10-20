@@ -301,10 +301,10 @@ input[type="range"]::-webkit-slider-runnable-track {
 
 @media screen and (min-width: 348px) and (max-width: 381px) {
   .explore {
-    font-size: 12px !important;
+    font-size: 13px !important;
   }
   .dive {
-    font-size: 8px !important;
+    font-size: 10px !important;
   }
 }
 
