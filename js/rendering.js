@@ -72,7 +72,7 @@ function displayCard1(card) {
   for (let i = 0; i < card.tags.length; i++) {
     tagsMarkup += `
     <p
-        class="p-[4px] xl:p-[8px] text-[11px] xl:text-[12px] border-[1px] border-[#D9D9D9] rounded-[30px] hover:bg-[#1E1E1E] hover:text-white"
+        class="p-[4px] xl:p-[7px] text-[11px] xl:text-[13px] border-[1px] border-[#D9D9D9] rounded-[30px] hover:bg-[#1E1E1E] hover:text-white"
   style="font-weight: 400;"
 
     >
@@ -90,13 +90,13 @@ function displayCard1(card) {
 
   let premiumMarkup = `
   <div class="h-[34px] xl:h-[42px] px-3 xl:px-[15px] py-1 xl:py-[8px] text-[15px] border-[1px] border-[#D9D9D9] rounded-[8px]"
-  style="font-weight: 400;"
+  style="font-weight: 500;"
   >
   Premium
   </div>`;
 
   let markup = `
-    <div class=" card col-span-1 flex flex-col border-[1px] border-[#D9D9D9] rounded-[20px] shadow-sm shadow-[#D9D9D9]">
+    <div class=" card col-span-1 flex flex-col border-[1px] border-[#D9D9D9] rounded-[20px] shadow-sm shadow-[#D9D9D9] md:w-[98%] mx-auto">
     <div class="card-img rounded-[20px] overflow-hidden relative border-[1px] border-[#D9D9D9]">
       <img src="${card.photo_url}" alt="" class="">
       ${
@@ -142,7 +142,7 @@ function displayCard1(card) {
         }
       </div>
       <p class="text-sm xl:text-base text-[#585858]">${card.desc}</p>
-      <div class="card-tags flex flex-wrap gap-[2px] xl:gap-1 ">
+      <div class="card-tags flex flex-wrap gap-[2px] xl:gap-1 mt-1 ">
         ${tagsMarkup}
       </div>
     </div>
@@ -165,7 +165,7 @@ function displayCard2(card) {
   for (let i = 0; i < card.tags.length; i++) {
     tagsMarkup += `
     <p
-      class="p-[4px] xl:p-[8px] text-[11px] xl:text-xs border-[1px] border-[#D9D9D9] rounded-[30px] hover:bg-[#1E1E1E] hover:text-white"
+      class="p-[4px] xl:p-[8px] text-[11px] xl:text-[13px] border-[1px] border-[#D9D9D9] rounded-[30px] hover:bg-[#1E1E1E] hover:text-white"
     >
         #${card.tags[i]}
     </p>`;
@@ -177,12 +177,12 @@ Premium
 </div>`;
 
   let markup = `
-    <div class="card col-span-1 flex flex-col border-[1px] border-[#D9D9D9] rounded-[20px] shadow-sm">
+    <div class="card col-span-1 flex flex-col border-[1px] border-[#D9D9D9] rounded-[20px] shadow-sm md:w-[98%] mx-auto">
           <div class="card-img grid grid-cols-2 rounded-[20px] border-[1px] border-[#D9D9D9] overflow-hidden relative">
-            <img src="${card.photo_url1}" alt="">
-            <img src="${card.photo_url2}" alt="">
-            <img src="${card.photo_url3}" alt="">
-            <img src="${card.photo_url4}" alt="">
+            <img class="image"  src="${card.photo_url1}" alt="">
+            <img class="image2" src="${card.photo_url2}" alt="">
+            <img class="image3" src="${card.photo_url3}" alt="">
+            <img class="image4" src="${card.photo_url4}" alt="">
             ${
               card.is_featured
                 ? '<article class="absolute top-[13px] left-[15px]  px-[15px] py-[8px] text-[15px] border-[1px] border-white rounded-[10px] text-white bg-[#FFFFFF33]">Featured</article>'
@@ -205,10 +205,10 @@ Premium
               <div class="flex items-center gap-2">
                 <img src="${card.userpfp}" alt="" class="h-[40px] !w-[40px]">
                 <div class="flex flex-col gap-[1px]">
-                  <h4 class="text-sm md:text-base xl:text-sm lg:text-lg font-medium">${
+                  <h4 class="text-sm md:text-base xl:text-sm lg:text-lg font-[600]">${
                     card.username
                   }</h4>
-                  <h6 class="text-[10px] md:text-xs">${card.desc}</h6>
+                  <h6 class="text-[10px] md:text-xs xl:text-[13px]">${card.desc}</h6>
                 </div>
               </div>
               <div class="flex gap-2">
@@ -234,7 +234,7 @@ Premium
               </div>
             </div>
 
-            <div class="card-tags flex flex-wrap gap-1">
+            <div class="card-tags flex flex-wrap gap-1 mt-1">
             ${tagsMarkup}
             </div>
           </div>
@@ -301,7 +301,7 @@ function displaySmallCard(card) {
   let markup = `
     <div class="card col-span-1 flex border-[1px] border-[#D9D9D9] rounded-[20px] shadow-sm">
 
-          <div class="card-img w-[50%] lg:w-[50%] xl:w-[50%]  h-full p-3 flex items-center overflow-hidden relative">
+          <div class="card-img w-[50%] lg:w-[50%] xl:w-[50%]  h-full px-2 py-3 flex items-center overflow-hidden relative">
             <img src="${card.photo_url}" alt="" class="w-full lg:h-[100%] xl:h-[100%] object-cover rounded-[19px]">
             <article class="price-tag absolute top-[18px] right-[18px] p-1 text-xs rounded-[8px] bg-white z-10">From
               $${card.price}</article>
@@ -309,7 +309,10 @@ function displaySmallCard(card) {
 
           <div class="card-body flex-1 flex flex-col gap-1 pe-2 py-3">
             <div class="flex items-center gap-3">
-              <h1 class="small-card-title text-[12px] xl:text-[15px] font-medium text-[#1E1E1E]">${card.title}</h1>
+              <h1 class="small-card-title text-[12px] xl:text-[15px] font-medium text-[#1E1E1E] "
+          style="line-height: 20px;" 
+              
+              >${card.title}</h1>
             </div>
             <div class="flex flex-col mt-3 md:mt-0 lg:mt-1">
               <article class="flex items-center gap-1">
@@ -423,7 +426,7 @@ function displayRankCard(card) {
   let markup = `
   
     <div
-    class="card col-span-1 flex flex-col md:flex-row items-center justify-between px-4 py-2 border-[1px] border-[#D9D9D9] rounded-[20px] shadow-sm">
+    class="card col-span-1 flex flex-col md:flex-row items-center justify-between px-4 py-1 border-[1px] border-[#D9D9D9] rounded-[20px] shadow-sm">
 
     <div class="w-full flex flex-col md:flex-row items-center">
       <div class="rank w-[40px] md:w-[50px] hidden md:flex items-center justify-center ">
