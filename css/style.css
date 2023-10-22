@@ -132,6 +132,10 @@ body {
   margin: auto;
 }
 
+.light-mode-icon {
+  display: none;
+}
+
 .home-banner {
   display: flex;
   flex-flow: column;

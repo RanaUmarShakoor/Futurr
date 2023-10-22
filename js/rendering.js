@@ -61,6 +61,19 @@ function onData5Received(data) {
   }
 }
 
+// function LikeHandler(){
+//   console.log("asj");
+//   if($(this).children(".liked-icon").css("display")==="none"){
+//     $(this).children(".liked-icon").css("display", "block");
+//     $(this).children(".not-liked-icon").css("display", "none");
+//   }
+//   else{
+//     $(this).children(".liked-icon").css("display", "none");
+//     $(this).children(".not-liked-icon").css("display", "block");
+//   }
+// }
+
+
 function displayCard1(card) {
   let priceM = "";
   if (card.price === "free") priceM = "Free";
@@ -118,12 +131,17 @@ function displayCard1(card) {
                 fill="#1E1E1E" />
             </svg>
           </button>
-          <button
-            class="h-[34px] xl:h-[42px] flex items-center justify-center gap-1 px-2 border-[1px] border-[#D9D9D9] rounded-[8px]">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <button onclick="LikeHandler(this)"
+            class="like-buttons h-[34px] xl:h-[42px] flex items-center justify-center gap-1 px-2 border-[1px] border-[#D9D9D9] rounded-[8px]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="not-liked-icon">
               <path
                 d="M13.7503 2.5C16.2817 2.5 18.3337 4.58333 18.3337 7.5C18.3337 13.3333 12.0837 16.6667 10.0003 17.9167C7.91699 16.6667 1.66699 13.3333 1.66699 7.5C1.66699 4.58333 3.75033 2.5 6.25033 2.5C7.8003 2.5 9.16699 3.33333 10.0003 4.16667C10.8337 3.33333 12.2003 2.5 13.7503 2.5ZM10.7786 15.5032C11.5132 15.0404 12.1753 14.5796 12.7961 14.0858C15.2784 12.1108 16.667 9.95292 16.667 7.5C16.667 5.53397 15.3862 4.16667 13.7503 4.16667C12.8537 4.16667 11.8831 4.64092 11.1788 5.34518L10.0003 6.52369L8.82183 5.34518C8.11756 4.64092 7.14691 4.16667 6.25033 4.16667C4.63288 4.16667 3.33366 5.54708 3.33366 7.5C3.33366 9.95292 4.72222 12.1108 7.20461 14.0858C7.82533 14.5796 8.48741 15.0404 9.22208 15.5032C9.47083 15.6599 9.71791 15.8108 10.0003 15.9793C10.2827 15.8108 10.5298 15.6599 10.7786 15.5032Z"
                 fill="#FF6969" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none" class="hidden liked-icon">
+                <path
+                  d="M14.5882 2.5C17.1195 2.5 19.1715 4.58333 19.1715 7.5C19.1715 13.3333 12.9215 16.6667 10.8382 17.9167C8.75488 16.6667 2.50488 13.3333 2.50488 7.5C2.50488 4.58333 4.58822 2.5 7.08822 2.5C8.63819 2.5 10.0049 3.33333 10.8382 4.16667C11.6715 3.33333 13.0382 2.5 14.5882 2.5Z"
+                  fill="#FF6969" />
             </svg>
             ${card.likes}
           </button>
