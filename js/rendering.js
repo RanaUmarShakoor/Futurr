@@ -121,14 +121,14 @@ function displayCard1(card) {
   // );
 
   let premiumMarkup = `
-  <div class="h-[34px] xl:h-[42px] px-3 xl:px-[15px] py-1 xl:py-[8px] text-[15px] border-[1px] border-[#D9D9D9] rounded-[8px]"
+  <div class="h-[34px] xl:h-[42px] px-3 xl:px-[15px] py-1 xl:py-[8px] text-[15px] border-[1px] border-[#D9D9D9] rounded-[8px] "
   style="font-weight: 500;"
   >
   Premium
   </div>`;
 
   let markup = `
-    <div class=" card col-span-1  flex flex-col border-[1px] border-[#D9D9D9] rounded-[20px] shadow-sm shadow-[#D9D9D9] md:w-[98%] mx-auto">
+    <div class=" card col-span-1  flex flex-col border-[1px] border-[#D9D9D9] rounded-[20px] hover:shadow-md hover:shadow-[#D9D9D9] md:w-[98%] mx-auto cursor-pointer">
     <div class="card-img rounded-[20px] overflow-hidden relative border-[1px] border-[#D9D9D9]">
       <img src="${card.photo_url}" alt="" class="">
       ${
@@ -221,7 +221,7 @@ function displayCard2(card) {
     </div>`;
 
   let markup = `
-    <div class="card col-span-1 flex flex-col border-[1px] border-[#D9D9D9] rounded-[20px] shadow-sm md:w-[98%] mx-auto">
+    <div class="card col-span-1 flex flex-col border-[1px] border-[#D9D9D9] rounded-[20px] hover:shadow-md md:w-[98%] mx-auto">
           <div class="card-img grid grid-cols-2 rounded-[20px] border-[1px] border-[#D9D9D9] overflow-hidden relative">
             <img class="image"  src="${card.photo_url1}" alt="">
             <img class="image2" src="${card.photo_url2}" alt="">
@@ -229,7 +229,7 @@ function displayCard2(card) {
             <img class="image4" src="${card.photo_url4}" alt="">
             ${
               card.is_featured
-                ? '<article class="absolute top-[13px] left-[15px]  px-[15px] py-[8px] text-[15px] border-[1px] border-white rounded-[10px] text-white bg-[#FFFFFF33]">Featured</article>'
+                ? '<article  class="feas absolute top-[13px] left-[15px]  px-[15px] py-[8px] text-[15px] border-[1px] border-[#FF7C7C] rounded-[10px] text-[#FF7C7C] bg-[#FFFFFF33]" >Featured</article>'
                 : ""
             }
             <button onclick="bookmarkHandler(this)"
@@ -304,7 +304,7 @@ function displayCard2(card) {
 
 function displayCard3(card) {
   let markup = `
-    <div class="card col-span-1 flex flex-col border-[1px] border-[#D9D9D9] rounded-[20px] shadow-sm">
+    <div class="card col-span-1 flex flex-col border-[1px] border-[#D9D9D9] rounded-[20px] hover:shadow-md cursor-pointer">
           <div class="card-img rounded-t-[20px] overflow-hidden">
             <img src="${card.photo_url}" alt="">
           </div>
@@ -359,7 +359,7 @@ function displaySmallCard(card) {
     priceM = `$${card.price} <span class="text-[10px] font-normal">per/mo</span>`;
 
   let markup = `
-    <div class="card col-span-1 flex border-[1px] border-[#D9D9D9] rounded-[20px] shadow-sm">
+    <div class="card col-span-1 flex border-[1px] border-[#D9D9D9] rounded-[20px] hover:shadow-md cursor-pointer">
 
           <div class="card-img w-[50%] lg:w-[50%] xl:w-[50%]  h-full px-2 py-3 flex items-center overflow-hidden relative">
             <img src="${card.photo_url}" alt="" class="w-full lg:h-[100%] xl:h-[100%] object-cover rounded-[19px]">
@@ -490,7 +490,7 @@ function displayRankCard(card) {
   let markup = `
   
     <div
-    class="card col-span-1 flex flex-col md:flex-row items-center justify-between px-4 py-1 border-[1px] border-[#D9D9D9] rounded-[20px] shadow-sm">
+    class="card col-span-1 flex flex-col md:flex-row items-center justify-between px-4 py-1 border-[1px] border-[#D9D9D9] rounded-[20px] hover:shadow-md cursor-pointer">
 
     <div class="w-full flex flex-col md:flex-row items-center">
       <div class="rank w-[40px] md:w-[50px] hidden md:flex items-center justify-center ">

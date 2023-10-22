@@ -10,15 +10,14 @@ body {
   /* background-color: gray; */
 }
 
-.owl-prev 
+.feas
 {
-display: none !important;
+  background-color: rgba(0, 0, 0, 0.61);
+    
+  backdrop-filter: blur(5px);
+
 }
 
-.owl-theme .owl-nav
-{
-  justify-content: end !important;
-}
 .wsx:hover {
   background-color: #1e1e1e !important;
   cursor: pointer;
