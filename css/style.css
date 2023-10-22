@@ -10,6 +10,11 @@ body {
   /* background-color: gray; */
 }
 
+.wsx:hover
+{
+  background-color: #1E1E1E !important;
+  cursor: pointer;
+}
 .image {
   width: 100%;
   height: 100%;
