@@ -10,6 +10,15 @@ body {
   /* background-color: gray; */
 }
 
+.owl-prev 
+{
+display: none !important;
+}
+
+.owl-theme .owl-nav
+{
+  justify-content: end !important;
+}
 .wsx:hover {
   background-color: #1e1e1e !important;
   cursor: pointer;

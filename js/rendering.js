@@ -254,18 +254,18 @@ function displayCard2(card) {
               <div class="flex items-center gap-2">
                 <img src="${card.userpfp}" alt="" class="h-[40px] !w-[40px]">
                 <div class="flex flex-col gap-[1px]">
-                  <h4 class="text-sm md:text-base xl:text-sm lg:text-lg font-[700]">${
+                  <h4 class="text-sm md:text-base xl:text-sm  font-[700]">${
                     card.username
                   }</h4>
-                  <h6 class="text-[10px] md:text-xs xl:text-[13px]">${
+                  <h6 class="text-[10px] md:text-[10px] lg:text-[8px] xl:text-[13px]">${
                     card.desc
                   }</h6>
                 </div>
               </div>
               <div class="flex gap-2">
                 <button
-                  class="h-[42px] flex items-center justify-center gap-1 px-2 text-sm md:text-base border-[1px] border-[#D9D9D9] rounded-[8px]">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
+                  class="h-[32px] xl:h-[42px] flex items-center justify-center gap-1 px-2 text-sm md:text-base border-[1px] border-[#D9D9D9] rounded-[8px]">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 lg:h-4  xl:h-5 w-5 lg:w-4 xl:w-5"   viewBox="0 0 21 20" fill="none">
                     <path
                       d="M5.57351 14.1665H17.6017V4.16654H4.08421V15.3208L5.57351 14.1665ZM6.15791 15.8332L2.39453 18.7499V3.33321C2.39453 2.87298 2.77278 2.49988 3.23937 2.49988H18.4465C18.9131 2.49988 19.2913 2.87298 19.2913 3.33321V14.9999C19.2913 15.4601 18.9131 15.8332 18.4465 15.8332H6.15791Z"
                       fill="#1E1E1E" />
@@ -274,8 +274,8 @@ function displayCard2(card) {
                 </button>
 
                 <button onclick="likeHandler(this)"
-                  class="h-[42px] flex items-center justify-center gap-1 px-2 text-sm md:text-base border-[1px] border-[#D9D9D9] rounded-[8px]">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="not-liked-icon">
+                  class="h-[32px] xl:h-[42px] flex items-center justify-center gap-1 px-2 text-sm md:text-base border-[1px] border-[#D9D9D9] rounded-[8px]">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 lg:h-4  xl:h-5 w-5 lg:w-4 xl:w-5" viewBox="0 0 20 20" fill="none" class="not-liked-icon">
                     <path
                       d="M13.7503 2.5C16.2817 2.5 18.3337 4.58333 18.3337 7.5C18.3337 13.3333 12.0837 16.6667 10.0003 17.9167C7.91699 16.6667 1.66699 13.3333 1.66699 7.5C1.66699 4.58333 3.75033 2.5 6.25033 2.5C7.8003 2.5 9.16699 3.33333 10.0003 4.16667C10.8337 3.33333 12.2003 2.5 13.7503 2.5ZM10.7786 15.5032C11.5132 15.0404 12.1753 14.5796 12.7961 14.0858C15.2784 12.1108 16.667 9.95292 16.667 7.5C16.667 5.53397 15.3862 4.16667 13.7503 4.16667C12.8537 4.16667 11.8831 4.64092 11.1788 5.34518L10.0003 6.52369L8.82183 5.34518C8.11756 4.64092 7.14691 4.16667 6.25033 4.16667C4.63288 4.16667 3.33366 5.54708 3.33366 7.5C3.33366 9.95292 4.72222 12.1108 7.20461 14.0858C7.82533 14.5796 8.48741 15.0404 9.22208 15.5032C9.47083 15.6599 9.71791 15.8108 10.0003 15.9793C10.2827 15.8108 10.5298 15.6599 10.7786 15.5032Z"
                       fill="#FF6969" />
