@@ -96,7 +96,7 @@ function displayCard1(card) {
   </div>`;
 
   let markup = `
-    <div class=" card col-span-1 flex flex-col border-[1px] border-[#D9D9D9] rounded-[20px] shadow-sm shadow-[#D9D9D9] md:w-[98%] mx-auto">
+    <div class=" card col-span-1  flex flex-col border-[1px] border-[#D9D9D9] rounded-[20px] shadow-sm shadow-[#D9D9D9] md:w-[98%] mx-auto">
     <div class="card-img rounded-[20px] overflow-hidden relative border-[1px] border-[#D9D9D9]">
       <img src="${card.photo_url}" alt="" class="">
       ${
