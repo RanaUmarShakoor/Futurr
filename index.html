@@ -13,7 +13,8 @@
   <link rel="preconnect" href="//fdn.fontcdn.ir" />
   <link rel="preconnect" href="//v1.fontapi.ir" />
   <link href="https://v1.fontapi.ir/css/SFProDisplay" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.korzh.com/metroui/v4.5.1/css/metro-all.min.css">
+  <!-- <link rel="stylesheet" href="https://cdn.korzh.com/metroui/v4.5.1/css/metro-all.min.css"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nouislider@14.7.0/distribute/nouislider.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -111,9 +112,9 @@
           class="flex flex-row font-normal p-0 space-x-2 bg-white absolute top-[14px] md:top-[16px] right-[38px] md:right-[65px]">
           <li class="flex xl:hidden justify-center gap-1">
             <button
-              class="theme-button h-[28px] w-[28px] md:h-[42px] md:w-[42px] flex items-center justify-center md:px-2 md:py-2 rounded-[50px] border-[1px] border-[#D9D9D9] bg-white">
-              <img src="./assets/png/moon-icon.png" alt="" class="w-[16px] md:w-[20px] dark-mode-icon" />
-              <img src="./assets/png/sun-icon.png" alt="" class="w-[16px] md:w-[20px] light-mode-icon" />
+              class="theme-buttons h-[28px] w-[28px] md:h-[42px] md:w-[42px] flex items-center justify-center md:px-2 md:py-2 rounded-[50px] border-[1px] border-[#D9D9D9]">
+              <img src="./assets/png/dark-mode-icon.png" alt="" class="w-[16px] md:w-[20px] dark-mode-icon" />
+              <img src="./assets/png/light-mode-icon.png" alt="" class="w-[16px] md:w-[20px] light-mode-icon" />
             </button>
 
             <button id="dropdownLangSelectButton" data-dropdown-toggle="dropdownLangSelect"
@@ -239,9 +240,9 @@
             </li>
             <li class="hidden xl:flex justify-center gap-5 xl:gap-1">
               <button
-                class="theme-button h-[38.5px] hover:shadow-md w-[38.5px] flex items-center justify-center px-2 py-2 rounded-[50px] border-[1px] border-[#D9D9D9] bg-white">
-                <img src="./assets/png/moon-icon.png" alt="" class="w-[20px] dark-mode-icon" />
-                <img src="./assets/png/sun-icon.png" alt="" class="w-[16px] md:w-[20px] light-mode-icon" />
+                class="theme-buttons h-[38.5px] hover:shadow-md w-[38.5px] flex items-center justify-center px-2 py-2 rounded-[50px] border-[1px] border-[#D9D9D9]">
+                <img src="./assets/png/dark-mode-icon.png" alt="" class="w-[20px] dark-mode-icon" />
+                <img src="./assets/png/light-mode-icon.png" alt="" class="w-[16px] md:w-[20px] light-mode-icon" />
               </button>
               <!-- <button
                   class="ml-1  hover:shadow-md h-[42px] w-[42px] rounded-[50px] border-[1px] border-[#D9D9D9] bg-white"
@@ -255,7 +256,7 @@
                 EN
               </button>
               <div id="dropdownLangSelect0"
-                class="z-10 hidden divide-y divide-gray-100 rounded-lg shadow absolute top-[60px] w-[150px] bg-[#F4F4F4]">
+                class="z-10 hidden divide-y divide-gray-100 rounded-lg shadow absolute top-[60px] w-[150px] bg-white hover:bg-grey">
                 <ul class="py-2 text-sm text-[#1E1E1E]">
                   <li>
                     <a href="#" name="EN" class="block px-4 py-2 hover:bg-white">English
@@ -546,7 +547,7 @@
                       class="dropdown2 top-[50px] absolute z-10 hidden divide-y divide-gray-100 rounded-lg shadow w-full bg-[#FFF]">
 
                       <!-- <div id="dropdownFeatures"
-                      class="dropdown2 text-[#1E1E1E] w-full h-2 left-0 top-100 absolute z-10 hidden divide-y divide-gray-100 rounded-lg shadow bg-white"> -->
+                    class="dropdown2 text-[#1E1E1E] w-full h-2 left-0 top-100 absolute z-10 hidden divide-y divide-gray-100 rounded-lg shadow bg-white"> -->
                       <ul class="py-2 text-sm text-[#1E1E1E]" aria-labelledby="dropdownFeatureButton">
                         <li>
                           <a href="#" class="block px-4 py-2 hover:bg-[#F4F4F4]">Dashboard</a>
@@ -636,165 +637,81 @@
 
               <div class="w-full mt-5 grid grid-cols-2 gap-4">
                 <div class="col-span-1">
-                  <label for="monthly-visits-slider" class="block mb-2 text-sm md:text-base font-medium">Monthly
+                  <label for="monthly-visits-slider" class="block pb-10 mb-2 text-sm md:text-base font-medium">Monthly
                     Visits</label>
-                  <div class="pt-5">
-                    <input id="monthly-visits-slider" data-role="doubleslider" data-min="100" data-max="100000"
-                      data-accuracy="200" data-value-min="0" data-value-max="10000" data-hint-always="true"
-                      data-hint-position-min="top" data-hint-position-max="top" data-show-min-max="false"
-                      data-cls-backside="bg-[#78788033] rounded-lg" data-cls-marker="bg-white border-50 custom-slider"
-                      data-cls-hint="bg-transparent fg-black text-[16px] font-[400] my-0 slider-hint"
-                      data-cls-complete="bg-[#11174C]" data-cls-min-max="text-bold" />
-                  </div>
+                  <div id="monthly-visits-slider" class="h-[4px]"></div>
                 </div>
-
-
-                <div class="w-full flex flex-col gap-3 mt-5">
-                  <h3 class="text-xl font-medium">Tags</h3>
-                  <div class="flex flex-wrap gap-3">
-                    <p
-                      class="wsx p-2 text-sm lg:text-base border-[1px] border-[#D9D9D9] rounded-[30px] bg-white hover:bg-[#1E1E1E] hover:text-white">
-                      Website
-                    </p>
-                    <p
-                      class="wsx p-2 text-sm lg:text-base border-[1px] border-[#D9D9D9] rounded-[30px] bg-white hover:bg-[#1E1E1E] hover:text-white">
-                      #developer tools
-                    </p>
-                    <p
-                      class="wsx p-2 text-sm lg:text-base border-[1px] border-[#D9D9D9] rounded-[30px] bg-white hover:bg-[#1E1E1E] hover:text-white">
-                      #AI chatbot
-                    </p>
-                    <p
-                      class="wsx p-2 text-sm lg:text-base border-[1px] border-[#D9D9D9] rounded-[30px] bg-white hover:bg-[#1E1E1E] hover:text-white">
-                      #customer support
-                    </p>
-
-                    <p
-                      class="wsx p-2 text-sm lg:text-base border-[1px] border-[#D9D9D9] rounded-[30px] bg-white hover:bg-[#1E1E1E] hover:text-white">
-                      Website
-                    </p>
-                    <p
-                      class="wsx p-2 text-sm lg:text-base border-[1px] border-[#D9D9D9] rounded-[30px] bg-white hover:bg-[#1E1E1E] hover:text-white">
-                      #developer tools
-                    </p>
-                    <p
-                      class="wsx p-2 text-sm lg:text-base border-[1px] border-[#D9D9D9] rounded-[30px] bg-white hover:bg-[#1E1E1E] hover:text-white">
-                      #AI chatbot
-                    </p>
-                    <p
-                      class="wsx p-2 text-sm lg:text-base border-[1px] border-[#D9D9D9] rounded-[30px] bg-white hover:bg-[#1E1E1E] hover:text-white">
-                      #customer support
-                    </p>
-
-                    <p
-                      class="wsx p-2 text-sm lg:text-base border-[1px] border-[#D9D9D9] rounded-[30px] bg-white hover:bg-[#1E1E1E] hover:text-white">
-                      Website
-                    </p>
-                    <p
-                      class="wsx p-2 text-sm lg:text-base border-[1px] border-[#D9D9D9] rounded-[30px] bg-white hover:bg-[#1E1E1E] hover:text-white">
-                      #developer tools
-                    </p>
-                    <p
-                      class="wsx p-2 text-sm lg:text-base border-[1px] border-[#D9D9D9] rounded-[30px] bg-white hover:bg-[#1E1E1E] hover:text-white">
-                      #AI chatbot
-                    </p>
-                    <p
-                      class="wsx p-2 text-sm lg:text-base border-[1px] border-[#D9D9D9] rounded-[30px] bg-white hover:bg-[#1E1E1E] hover:text-white">
-                      #customer support
-                    </p>
-
-                    <div class="col-span-1">
-                      <label for="large-range" class="block mb-2 text-sm md:text-base font-medium">Rankings</label>
-                      <div class="pt-5">
-                        <input id="rankings-slider" data-role="doubleslider" data-min="100" data-max="100000"
-                          data-accuracy="200" data-value-min="0" data-value-max="10000" data-hint-always="true"
-                          data-hint-position-min="top" data-hint-position-max="top" data-show-min-max="false"
-                          data-cls-backside="bg-[#78788033] rounded-lg"
-                          data-cls-marker="bg-white border-50 custom-slider"
-                          data-cls-hint="bg-transparent fg-black text-[16px] font-[400] my-0 slider-hint"
-                          data-cls-complete="bg-[#11174C]" data-cls-min-max="text-bold" />
-
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="w-full flex flex-col gap-3 mt-5">
-                    <h3 class="text-xl font-medium">Tags</h3>
-                    <div class="flex flex-wrap gap-3">
-                      <p
-                        class="p-2 text-sm lg:text-base border-[1px] border-[#D9D9D9] rounded-[30px] bg-white hover:bg-[#1E1E1E]">
-                        Website
-                      </p>
-                      <p
-                        class="p-2 text-sm lg:text-base border-[1px] border-[#D9D9D9] rounded-[30px] bg-white hover:bg-[#1E1E1E]">
-                        #developer tools
-                      </p>
-                      <p
-                        class="p-2 text-sm lg:text-base border-[1px] border-[#D9D9D9] rounded-[30px] bg-white hover:bg-[#1E1E1E]">
-                        #AI chatbot
-                      </p>
-                      <p
-                        class="p-2 text-sm lg:text-base border-[1px] border-[#D9D9D9] rounded-[30px] bg-white hover:bg-[#1E1E1E]">
-                        #customer support
-                      </p>
-
-                      <p
-                        class="p-2 text-sm lg:text-base border-[1px] border-[#D9D9D9] rounded-[30px] bg-white hover:bg-[#1E1E1E]">
-                        Website
-                      </p>
-                      <p
-                        class="p-2 text-sm lg:text-base border-[1px] border-[#D9D9D9] rounded-[30px] bg-white hover:bg-[#1E1E1E]">
-                        #developer tools
-                      </p>
-                      <p
-                        class="p-2 text-sm lg:text-base border-[1px] border-[#D9D9D9] rounded-[30px] bg-white hover:bg-[#1E1E1E]">
-                        #AI chatbot
-                      </p>
-                      <p
-                        class="p-2 text-sm lg:text-base border-[1px] border-[#D9D9D9] rounded-[30px] bg-white hover:bg-[#1E1E1E]">
-                        #customer support
-                      </p>
-
-                      <p
-                        class="p-2 text-sm lg:text-base border-[1px] border-[#D9D9D9] rounded-[30px] bg-white hover:bg-[#1E1E1E]">
-                        Website
-                      </p>
-                      <p
-                        class="p-2 text-sm lg:text-base border-[1px] border-[#D9D9D9] rounded-[30px] bg-white hover:bg-[#1E1E1E]">
-                        #developer tools
-                      </p>
-                      <p
-                        class="p-2 text-sm lg:text-base border-[1px] border-[#D9D9D9] rounded-[30px] bg-white hover:bg-[#1E1E1E]">
-                        #AI chatbot
-                      </p>
-                      <p
-                        class="p-2 text-sm lg:text-base border-[1px] border-[#D9D9D9] rounded-[30px] bg-white hover:bg-[#1E1E1E]">
-                        #customer support
-                      </p>
-                    </div>
-                  </div>
-                  <!-- <ul class="py-2 text-sm text-[#1E1E1E]" aria-labelledby="dropdownFilterButton">
-                <li>
-                  <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">Dashboard</a>
-                </li>
-                <li>
-                  <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">Settings</a>
-                </li>
-                <li>
-                  <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">Earnings</a>
-                </li>
-                <li>
-                  <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">Sign
-                    out</a>
-                </li>
-              </ul> -->
+                <div class="col-span-1">
+                  <label for="rankings-slider"
+                    class="block pb-10 mb-2 text-sm md:text-base font-medium">Rankings</label>
+                  <div id="rankings-slider"></div>
                 </div>
               </div>
+              <div class="mt-5 pt-5">
+                <div>
+                  <h3 class="text-xl font-medium">Tags</h3>
+                </div>
+                <div class="w-full flex gap-3 mt-5">
+                  <div class="flex flex-wrap gap-3">
+                    <p
+                      class="p-2 text-sm lg:text-base border-[1px] border-[#D9D9D9] rounded-[30px] bg-white hover:bg-[#1E1E1E]">
+                      Website
+                    </p>
+                    <p
+                      class="p-2 text-sm lg:text-base border-[1px] border-[#D9D9D9] rounded-[30px] bg-white hover:bg-[#1E1E1E]">
+                      #developer tools
+                    </p>
+                    <p
+                      class="p-2 text-sm lg:text-base border-[1px] border-[#D9D9D9] rounded-[30px] bg-white hover:bg-[#1E1E1E]">
+                      #AI chatbot
+                    </p>
+                    <p
+                      class="p-2 text-sm lg:text-base border-[1px] border-[#D9D9D9] rounded-[30px] bg-white hover:bg-[#1E1E1E]">
+                      #customer support
+                    </p>
+
+                    <p
+                      class="p-2 text-sm lg:text-base border-[1px] border-[#D9D9D9] rounded-[30px] bg-white hover:bg-[#1E1E1E]">
+                      Website
+                    </p>
+                    <p
+                      class="p-2 text-sm lg:text-base border-[1px] border-[#D9D9D9] rounded-[30px] bg-white hover:bg-[#1E1E1E]">
+                      #developer tools
+                    </p>
+                    <p
+                      class="p-2 text-sm lg:text-base border-[1px] border-[#D9D9D9] rounded-[30px] bg-white hover:bg-[#1E1E1E]">
+                      #AI chatbot
+                    </p>
+                    <p
+                      class="p-2 text-sm lg:text-base border-[1px] border-[#D9D9D9] rounded-[30px] bg-white hover:bg-[#1E1E1E]">
+                      #customer support
+                    </p>
+
+                    <p
+                      class="p-2 text-sm lg:text-base border-[1px] border-[#D9D9D9] rounded-[30px] bg-white hover:bg-[#1E1E1E]">
+                      Website
+                    </p>
+                    <p
+                      class="p-2 text-sm lg:text-base border-[1px] border-[#D9D9D9] rounded-[30px] bg-white hover:bg-[#1E1E1E]">
+                      #developer tools
+                    </p>
+                    <p
+                      class="p-2 text-sm lg:text-base border-[1px] border-[#D9D9D9] rounded-[30px] bg-white hover:bg-[#1E1E1E]">
+                      #AI chatbot
+                    </p>
+                    <p
+                      class="p-2 text-sm lg:text-base border-[1px] border-[#D9D9D9] rounded-[30px] bg-white hover:bg-[#1E1E1E]">
+                      #customer support
+                    </p>
+                  </div>
+                </div>
+              </div>
+
             </div>
+          </div>
+        </div>
 
     </section>
-
-
 
     <!-- Trending Tools Section  -->
     <section class="mainz w-[90%] 2xl:w-[67%] mx-auto flex flex-col gap-4 py-8">
@@ -2361,12 +2278,14 @@
   </main>
 
   <!-- <script src="./js/bootstrap.min.js"></script> -->
-  <script src="https://cdn.korzh.com/metroui/v4.5.1/js/metro.min.js"></script>
+  <!-- <script src="https://cdn.korzh.com/metroui/v4.5.1/js/metro.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/nouislider@14.7.0/distribute/nouislider.min.js"></script>
   <script src="./js/jquery-3.5.1.slim.min.js"></script>
   <script src="./js/image-uploader.min.js"></script>
   <script src="./js/owl.carousel.min.js"></script>
   <script src="./js/custom.js"></script>
   <script src="./js/rendering.js"></script>
+  <script src="./js/slider.js"></script>
 </body>
 
 </html>

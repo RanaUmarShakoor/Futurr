@@ -1,12 +1,12 @@
-$(".theme-button").on("click", function () {
+$(".theme-buttons").on("click", function () {
   if ($(".dark-mode-icon").css("display") === "none") {
     $(".dark-mode-icon").css("display", "block");
     $(".light-mode-icon").css("display", "none");
-    $(".theme-button").css("background", "white");
+    $(".theme-buttons").css("background", "white");
   } else {
     $(".dark-mode-icon").css("display", "none");
     $(".light-mode-icon").css("display", "block");
-    $(".theme-button").css("background", "#1e1e1e");
+    $(".theme-buttons").css("background", "#1E1E1E");
   }
 });
 

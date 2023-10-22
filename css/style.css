@@ -10,11 +10,11 @@ body {
   /* background-color: gray; */
 }
 
-.wsx:hover
-{
-  background-color: #1E1E1E !important;
+.wsx:hover {
+  background-color: #1e1e1e !important;
   cursor: pointer;
 }
+
 .image {
   width: 100%;
   height: 100%;
@@ -380,6 +380,41 @@ body {
   height: 28px !important;
 }
 
-li {
-  list-style: none;
+.noUi-base {
+  padding: 0px !important;
+  margin: 0px !important;
+  height: 4px !important;
+  background: #78788033 !important;
+}
+
+.noUi-horizontal {
+  height: 4px !important;
+}
+
+.noUi-handle {
+  width: 28px !important;
+  height: 28px !important;
+  top: -13px !important;
+  border: none !important;
+  background: #fff !important;
+  cursor: pointer !important;
+  border-radius: 50% !important;
+}
+
+.noUi-connect {
+  background-color: #11174c !important;
+}
+
+.noUi-connect {
+  height: 8px !important;
+  background-color: #11174c !important;
+}
+
+.noUi-tooltip {
+  margin-bottom: 0px !important;
+  padding: 0px !important;
+  border: none !important;
+  font-size: 16px !important;
+  color: #1e1e1e !important;
+  background-color: transparent !important;
 }
