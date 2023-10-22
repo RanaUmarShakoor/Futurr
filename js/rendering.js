@@ -61,6 +61,39 @@ function onData5Received(data) {
   }
 }
 
+function likeHandler(id) {
+  let notLikedIcon = $(id).find(".not-liked-icon");
+  let likedIcon = $(id).find(".liked-icon");
+  let likes = $(id).find("span");
+
+  let likeCount = parseInt(likes.text());
+
+  if (notLikedIcon.hasClass("hidden")) {
+    notLikedIcon.removeClass("hidden");
+    likedIcon.addClass("hidden");
+    likeCount--;
+  } else {
+    notLikedIcon.addClass("hidden");
+    likedIcon.removeClass("hidden");
+    likeCount++;
+  }
+
+  likes.text(likeCount);
+}
+
+function bookmarkHandler(id) {
+  let notBookmarkedIcon = $(id).find(".not-bookmarked-icon");
+  let bookmarkedIcon = $(id).find(".bookmarked-icon");
+
+  if (notBookmarkedIcon.hasClass("hidden")) {
+    notBookmarkedIcon.removeClass("hidden");
+    bookmarkedIcon.addClass("hidden");
+  } else {
+    notBookmarkedIcon.addClass("hidden");
+    bookmarkedIcon.removeClass("hidden");
+  }
+}
+
 function displayCard1(card) {
   let priceM = "";
   if (card.price === "free") priceM = "Free";
@@ -72,9 +105,8 @@ function displayCard1(card) {
   for (let i = 0; i < card.tags.length; i++) {
     tagsMarkup += `
     <p
-        class="p-[4px] xl:p-[7px] text-[11px] xl:text-[13px] border-[1px] border-[#D9D9D9] rounded-[30px] hover:bg-[#1E1E1E] hover:text-white"
-  style="font-weight: 400;"
-
+      class="p-[4px] xl:p-[7px] text-[11px] xl:text-[13px] border-[1px] border-[#D9D9D9] rounded-[30px] hover:bg-[#1E1E1E] hover:text-white"
+      style="font-weight: 400;"
     >
         #${card.tags[i]}
     </p>`;
@@ -110,27 +142,39 @@ function displayCard1(card) {
       <div class="card-actions flex justify-between">
         ${card.is_premium ? premiumMarkup : ""}
         <div class="flex gap-2">
-          <button
+          <button onclick="bookmarkHandler(this)"
             class="h-[34px] xl:h-[42px] w-[42px] flex items-center justify-center border-[1px] border-[#D9D9D9] rounded-[8px]">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" fill="none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" fill="none" class="not-bookmarked-icon">
               <path
                 d="M0.84544 0H12.6816C13.1485 0 13.527 0.3731 13.527 0.833333V16.7861C13.527 17.0162 13.3377 17.2028 13.1043 17.2028C13.0249 17.2028 12.9471 17.1807 12.8798 17.1391L6.76352 13.3594L0.64726 17.1391C0.449461 17.2613 0.188584 17.2024 0.064566 17.0074C0.0223786 16.9411 0 16.8644 0 16.7861V0.833333C0 0.3731 0.37852 0 0.84544 0ZM11.8362 1.66667H1.69088V14.527L6.76352 11.3923L11.8362 14.527V1.66667Z"
                 fill="#1E1E1E" />
             </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="18" height="24" viewBox="0 0 24 24" class="hidden bookmarked-icon">
+              <path 
+                d="M 6 2 C 5.861875 2 5.7278809 2.0143848 5.5976562 2.0410156 C 4.686084 2.2274316 4 3.033125 4 4 L 4 22 L 12 19 L 20 22 L 20 4 C 20 3.8625 19.985742 3.7275391 19.958984 3.5976562 C 19.799199 2.8163086 19.183691 2.2008008 18.402344 2.0410156 C 18.272119 2.0143848 18.138125 2 18 2 L 6 2 z"
+                fill="#1E1E1E" />
+            </svg>
           </button>
-          <button
-            class="h-[34px] xl:h-[42px] flex items-center justify-center gap-1 px-2 border-[1px] border-[#D9D9D9] rounded-[8px]">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <button onclick="likeHandler(this)"
+            class="h-[34px] xl:h-[42px] flex items-center justify-center gap-1 px-2 border-[1px] border-[#D9D9D9] rounded-[8px] hover:shadow-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="not-liked-icon">
               <path
                 d="M13.7503 2.5C16.2817 2.5 18.3337 4.58333 18.3337 7.5C18.3337 13.3333 12.0837 16.6667 10.0003 17.9167C7.91699 16.6667 1.66699 13.3333 1.66699 7.5C1.66699 4.58333 3.75033 2.5 6.25033 2.5C7.8003 2.5 9.16699 3.33333 10.0003 4.16667C10.8337 3.33333 12.2003 2.5 13.7503 2.5ZM10.7786 15.5032C11.5132 15.0404 12.1753 14.5796 12.7961 14.0858C15.2784 12.1108 16.667 9.95292 16.667 7.5C16.667 5.53397 15.3862 4.16667 13.7503 4.16667C12.8537 4.16667 11.8831 4.64092 11.1788 5.34518L10.0003 6.52369L8.82183 5.34518C8.11756 4.64092 7.14691 4.16667 6.25033 4.16667C4.63288 4.16667 3.33366 5.54708 3.33366 7.5C3.33366 9.95292 4.72222 12.1108 7.20461 14.0858C7.82533 14.5796 8.48741 15.0404 9.22208 15.5032C9.47083 15.6599 9.71791 15.8108 10.0003 15.9793C10.2827 15.8108 10.5298 15.6599 10.7786 15.5032Z"
                 fill="#FF6969" />
             </svg>
-            ${card.likes}
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="hidden liked-icon">
+                <path
+                  d="M14.5882 2.5C17.1195 2.5 19.1715 4.58333 19.1715 7.5C19.1715 13.3333 12.9215 16.6667 10.8382 17.9167C8.75488 16.6667 2.50488 13.3333 2.50488 7.5C2.50488 4.58333 4.58822 2.5 7.08822 2.5C8.63819 2.5 10.0049 3.33333 10.8382 4.16667C11.6715 3.33333 13.0382 2.5 14.5882 2.5Z"
+                  fill="#FF6969" />
+            </svg>
+            <span>${card.likes}</span>
           </button>
         </div>
       </div>
       <div class="flex items-center gap-2">
-        <h1 class="text-xl xl:text-2xl font-bold text-[#1E1E1E]">${card.title}</h1>
+        <h1 class="text-xl xl:text-2xl font-bold text-[#1E1E1E]">${
+          card.title
+        }</h1>
         ${
           card.is_verified
             ? `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -172,9 +216,9 @@ function displayCard2(card) {
   }
 
   let premiumMarkup = `
-<div class="h-[42px] px-2 py-2 border-[1px] border-[#D9D9D9] rounded-[8px]">
-Premium
-</div>`;
+    <div class="h-[42px] px-2 py-2 border-[1px] border-[#D9D9D9] rounded-[8px]">
+      Premium
+    </div>`;
 
   let markup = `
     <div class="card col-span-1 flex flex-col border-[1px] border-[#D9D9D9] rounded-[20px] shadow-sm md:w-[98%] mx-auto">
@@ -188,11 +232,16 @@ Premium
                 ? '<article class="absolute top-[13px] left-[15px]  px-[15px] py-[8px] text-[15px] border-[1px] border-white rounded-[10px] text-white bg-[#FFFFFF33]">Featured</article>'
                 : ""
             }
-            <button
+            <button onclick="bookmarkHandler(this)"
               class="absolute bottom-[13px] right-[13px] p-2 flex items-center gap-1 text-base rounded-[10px] text-[#1E1E1E] bg-white border-[1px] border-[#D9D9D9]">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" fill="none">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" fill="none" class="not-bookmarked-icon">
                 <path
                   d="M0.84544 0H12.6816C13.1485 0 13.527 0.3731 13.527 0.833333V16.7861C13.527 17.0162 13.3377 17.2028 13.1043 17.2028C13.0249 17.2028 12.9471 17.1807 12.8798 17.1391L6.76352 13.3594L0.64726 17.1391C0.449461 17.2613 0.188584 17.2024 0.064566 17.0074C0.0223786 16.9411 0 16.8644 0 16.7861V0.833333C0 0.3731 0.37852 0 0.84544 0ZM11.8362 1.66667H1.69088V14.527L6.76352 11.3923L11.8362 14.527V1.66667Z"
+                  fill="#1E1E1E" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="18" height="24" viewBox="0 0 24 24" class="hidden bookmarked-icon">
+                <path 
+                  d="M 6 2 C 5.861875 2 5.7278809 2.0143848 5.5976562 2.0410156 C 4.686084 2.2274316 4 3.033125 4 4 L 4 22 L 12 19 L 20 22 L 20 4 C 20 3.8625 19.985742 3.7275391 19.958984 3.5976562 C 19.799199 2.8163086 19.183691 2.2008008 18.402344 2.0410156 C 18.272119 2.0143848 18.138125 2 18 2 L 6 2 z"
                   fill="#1E1E1E" />
               </svg>
               <p>
@@ -208,7 +257,9 @@ Premium
                   <h4 class="text-sm md:text-base xl:text-sm lg:text-lg font-[600]">${
                     card.username
                   }</h4>
-                  <h6 class="text-[10px] md:text-xs xl:text-[13px]">${card.desc}</h6>
+                  <h6 class="text-[10px] md:text-xs xl:text-[13px]">${
+                    card.desc
+                  }</h6>
                 </div>
               </div>
               <div class="flex gap-2">
@@ -222,14 +273,19 @@ Premium
                   ${card.comments}
                 </button>
 
-                <button
+                <button onclick="likeHandler(this)"
                   class="h-[42px] flex items-center justify-center gap-1 px-2 text-sm md:text-base border-[1px] border-[#D9D9D9] rounded-[8px]">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="not-liked-icon">
+                    <path
+                      d="M13.7503 2.5C16.2817 2.5 18.3337 4.58333 18.3337 7.5C18.3337 13.3333 12.0837 16.6667 10.0003 17.9167C7.91699 16.6667 1.66699 13.3333 1.66699 7.5C1.66699 4.58333 3.75033 2.5 6.25033 2.5C7.8003 2.5 9.16699 3.33333 10.0003 4.16667C10.8337 3.33333 12.2003 2.5 13.7503 2.5ZM10.7786 15.5032C11.5132 15.0404 12.1753 14.5796 12.7961 14.0858C15.2784 12.1108 16.667 9.95292 16.667 7.5C16.667 5.53397 15.3862 4.16667 13.7503 4.16667C12.8537 4.16667 11.8831 4.64092 11.1788 5.34518L10.0003 6.52369L8.82183 5.34518C8.11756 4.64092 7.14691 4.16667 6.25033 4.16667C4.63288 4.16667 3.33366 5.54708 3.33366 7.5C3.33366 9.95292 4.72222 12.1108 7.20461 14.0858C7.82533 14.5796 8.48741 15.0404 9.22208 15.5032C9.47083 15.6599 9.71791 15.8108 10.0003 15.9793C10.2827 15.8108 10.5298 15.6599 10.7786 15.5032Z"
+                      fill="#FF6969" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="hidden liked-icon">
                     <path
                       d="M14.5882 2.5C17.1195 2.5 19.1715 4.58333 19.1715 7.5C19.1715 13.3333 12.9215 16.6667 10.8382 17.9167C8.75488 16.6667 2.50488 13.3333 2.50488 7.5C2.50488 4.58333 4.58822 2.5 7.08822 2.5C8.63819 2.5 10.0049 3.33333 10.8382 4.16667C11.6715 3.33333 13.0382 2.5 14.5882 2.5Z"
                       fill="#FF6969" />
-                  </svg>
-                  ${card.likes}
+                  </svg>                      
+                  <span>${card.likes}</span>                  
                 </button>
               </div>
             </div>
@@ -272,18 +328,22 @@ function displayCard3(card) {
                   <svg xmlns="http://www.w3.org/2000/svg" width="17" height="18" viewBox="0 0 17 18" fill="none">
                     <path
                       d="M9.93383 13.186L6.43473 11.2773C5.82645 11.9274 4.96083 12.3337 4.00033 12.3337C2.15938 12.3337 0.666992 10.8412 0.666992 9.00033C0.666992 7.15938 2.15938 5.66699 4.00033 5.66699C4.96078 5.66699 5.82637 6.07321 6.43464 6.72321L9.93383 4.8146C9.86841 4.554 9.83366 4.28122 9.83366 4.00033C9.83366 2.15938 11.3261 0.666992 13.167 0.666992C15.0079 0.666992 16.5003 2.15938 16.5003 4.00033C16.5003 5.84128 15.0079 7.33366 13.167 7.33366C12.2065 7.33366 11.3409 6.92742 10.7326 6.27738L7.23347 8.18599C7.29891 8.44658 7.33366 8.71941 7.33366 9.00033C7.33366 9.28124 7.29892 9.55399 7.2335 9.81458L10.7327 11.7232C11.3409 11.0732 12.2065 10.667 13.167 10.667C15.0079 10.667 16.5003 12.1594 16.5003 14.0003C16.5003 15.8412 15.0079 17.3337 13.167 17.3337C11.3261 17.3337 9.83366 15.8412 9.83366 14.0003C9.83366 13.7194 9.86841 13.4466 9.93383 13.186ZM4.00033 10.667C4.9208 10.667 5.66699 9.92083 5.66699 9.00033C5.66699 8.07983 4.9208 7.33366 4.00033 7.33366C3.07985 7.33366 2.33366 8.07983 2.33366 9.00033C2.33366 9.92083 3.07985 10.667 4.00033 10.667ZM13.167 5.66699C14.0875 5.66699 14.8337 4.9208 14.8337 4.00033C14.8337 3.07985 14.0875 2.33366 13.167 2.33366C12.2465 2.33366 11.5003 3.07985 11.5003 4.00033C11.5003 4.9208 12.2465 5.66699 13.167 5.66699ZM13.167 15.667C14.0875 15.667 14.8337 14.9208 14.8337 14.0003C14.8337 13.0798 14.0875 12.3337 13.167 12.3337C12.2465 12.3337 11.5003 13.0798 11.5003 14.0003C11.5003 14.9208 12.2465 15.667 13.167 15.667Z"
-                      fill="black" />
+                      fill="#1E1E1E" />
                   </svg>
                 </button>
-                <button
+                <button onclick="bookmarkHandler(this)"
                   class=" h-[34px] w-[34px] xl:h-[42px] xl:w-[42px] flex items-center justify-center border-[1px] border-[#D9D9D9] rounded-[8px]">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" fill="none">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" fill="none" class="not-bookmarked-icon">
                     <path
                       d="M0.84544 0H12.6816C13.1485 0 13.527 0.3731 13.527 0.833333V16.7861C13.527 17.0162 13.3377 17.2028 13.1043 17.2028C13.0249 17.2028 12.9471 17.1807 12.8798 17.1391L6.76352 13.3594L0.64726 17.1391C0.449461 17.2613 0.188584 17.2024 0.064566 17.0074C0.0223786 16.9411 0 16.8644 0 16.7861V0.833333C0 0.3731 0.37852 0 0.84544 0ZM11.8362 1.66667H1.69088V14.527L6.76352 11.3923L11.8362 14.527V1.66667Z"
                       fill="#1E1E1E" />
                   </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="18" height="24" viewBox="0 0 24 24" class="hidden bookmarked-icon">
+                    <path 
+                      d="M 6 2 C 5.861875 2 5.7278809 2.0143848 5.5976562 2.0410156 C 4.686084 2.2274316 4 3.033125 4 4 L 4 22 L 12 19 L 20 22 L 20 4 C 20 3.8625 19.985742 3.7275391 19.958984 3.5976562 C 19.799199 2.8163086 19.183691 2.2008008 18.402344 2.0410156 C 18.272119 2.0143848 18.138125 2 18 2 L 6 2 z"
+                      fill="#1E1E1E" />
+                  </svg>                    
                 </button>
-
               </div>
             </div>
           </div>
@@ -432,47 +492,37 @@ function displayRankCard(card) {
       <div class="rank w-[40px] md:w-[50px] hidden md:flex items-center justify-center ">
         <div class="flex items-end gap-1">
           ${rank}
-          <h3 class="text-xl md:text-[20px] lg:text-[30px] xl:text-[34px] font-medium">${
-            card.rank
-          }.</h3>
+          <h3 class="text-xl md:text-[20px] lg:text-[30px] xl:text-[34px] font-medium">${card.rank}.</h3>
         </div>
 
       </div>
 
-`; 
-if (card.rank < 4) { 
-  markup += `
+`;
+  if (card.rank < 4) {
+    markup += `
   <div
 
         class="card-img  md:w-[120px] lg:w-[140px] xl:w-[40%] h-full p-1 md:p-2 overflow-hidden relative">
-        <img src="${
-          card.photo_url
-        }" alt="" class="w-full h-full object-cover rounded-[10px]">
+        <img src="${card.photo_url}" alt="" class="w-full h-full object-cover rounded-[10px]">
       </div>
       `;
-      }
-      else if (card.rank < 10) {
-        markup += `
+  } else if (card.rank < 10) {
+    markup += `
         <div
       
               class="ml-5 card-img  md:w-[120px] lg:w-[140px] xl:w-[40%] h-full p-1 md:p-2 overflow-hidden relative">
-              <img src="${
-                card.photo_url
-              }" alt="" class=" w-full h-full object-cover rounded-[10px]">
+              <img src="${card.photo_url}" alt="" class=" w-full h-full object-cover rounded-[10px]">
             </div>
             `;
-      }
-      else if (card.rank < 100) {
-        markup += `
+  } else if (card.rank < 100) {
+    markup += `
         <div
       
               class="ml-2 card-img  md:w-[120px] lg:w-[140px] xl:w-[40%] h-full p-1 md:p-2 overflow-hidden relative">
-              <img src="${
-                card.photo_url
-              }" alt="" class=" w-full h-full object-cover rounded-[10px]">
+              <img src="${card.photo_url}" alt="" class=" w-full h-full object-cover rounded-[10px]">
             </div>
             `;
-      }
+  }
   markup += `
       
 
@@ -492,9 +542,7 @@ if (card.rank < 4) {
         <div class="flex items-center gap-1 md:gap-3">
           <h1 class="text-sm md:text-base lg:text-sm lg:text-[18px] font-[700] text-[#1E1E1E]"
         
-          >${
-            card.title
-          }
+          >${card.title}
           </h1>
           ${
             card.is_verified
