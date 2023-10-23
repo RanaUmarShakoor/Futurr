@@ -226,6 +226,11 @@ body {
   transform: rotate(180deg);
 }
 
+.dive
+{
+  line-height: 18px;
+}
+
 @media screen and (min-width: 1536px) and (max-width: 1900px) {
   .mainz {
     width: 80% !important;
