@@ -494,9 +494,9 @@ function displayRankCard(card) {
 
     <div class="w-full flex flex-col md:flex-row items-center">
       <div class="rank w-[40px] md:w-[50px] hidden md:flex items-center justify-center ">
-        <div class="flex items-end gap-1">
+        <div class="flex items-end gap-1 ">
           ${rank}
-          <h3 class="text-xl md:text-[20px] lg:text-[30px] xl:text-[34px] font-medium">${card.rank}.</h3>
+          <h3 class=" text-xl md:text-[20px] lg:text-[30px] xl:text-[34px] font-medium">${card.rank}.</h3>
         </div>
 
       </div>
@@ -532,7 +532,7 @@ function displayRankCard(card) {
 
       <div class="w-full flex items-center gap-2">
       
-        <div class="w-[40px] flex md:hidden items-start md:items-end gap-1">
+        <div class="w-[40px] flex md:hidden  items-start md:items-end gap-1">
           ${rank}
           <h3 class="leading-[18px] text-lg md:text-[20px] lg:text-[30px] xl:text-[34px] font-medium">${
             card.rank
