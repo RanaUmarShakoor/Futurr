@@ -312,6 +312,11 @@ body {
   .owl-theme .owl-nav {
     display: none !important;
   }
+  .owl-theme .owl-dots {
+    display: block !important;
+    margin-top: 10px !important;
+  }
+  
 }
 
 @media screen and (min-width: 566px) and (max-width: 785px) {

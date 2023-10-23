@@ -128,12 +128,12 @@ function displayCard1(card) {
   </div>`;
 
   let markup = `
-    <div class=" card col-span-1  flex flex-col border-[1px] border-[#D9D9D9] rounded-[20px] hover:shadow-md hover:shadow-[#D9D9D9] md:w-[98%] mx-auto cursor-pointer">
+    <div class=" card col-span-1  flex flex-col border-[1px] border-[#D9D9D9] rounded-[20px] hover:shadow-md hover:shadow-[#D9D9D9]  md:w-[98%] mx-auto cursor-pointer">
     <div class="card-img rounded-[20px] overflow-hidden relative border-[1px] border-[#D9D9D9]">
       <img src="${card.photo_url}" alt="" class="">
       ${
         card.is_featured
-          ? '<article class="absolute top-[13px] left-[13px] px-[10px] xl:px-[18px] py-[5px] xl:py-[8px] text-[13px] xl:text-[15px] border-[1px] border-white rounded-[10px] text-white bg-[#FFFFFF33]">Featured</article>'
+          ? '<article class="feas absolute top-[13px] left-[13px] px-[10px] xl:px-[18px] py-[5px] xl:py-[8px] text-[13px] xl:text-[15px] border-[1px] border-[#FF7C7C] rounded-[10px] text-[#FF7C7C] bg-[#FFFFFF33]">Featured</article>'
           : ""
       }
       <article class="absolute bottom-[13px] right-[13px] px-[10px] xl:px-[15px] py-[5px] xl:py-[8px] text-[13px] xl:text-[15px] font-bold rounded-[10px] text-[#1E1E1E] bg-white border-[1px] border-[#D9D9D9]">${priceM}</article>
