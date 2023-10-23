@@ -506,7 +506,7 @@ function displayRankCard(card) {
     markup += `
   <div
 
-        class="card-img  md:w-[120px] lg:w-[140px] xl:w-[40%] h-full p-1 md:p-2 overflow-hidden relative">
+        class="card-img  md:w-[50%] lg:w-[50%] xl:w-[40%] h-full p-1 md:p-2 overflow-hidden relative">
         <img src="${card.photo_url}" alt="" class="w-full h-full object-cover rounded-[10px]">
       </div>
       `;
@@ -514,7 +514,7 @@ function displayRankCard(card) {
     markup += `
         <div
       
-              class="ml-5 card-img  md:w-[120px] lg:w-[140px] xl:w-[40%] h-full p-1 md:p-2 overflow-hidden relative">
+              class=" md:ml-3 lg:ml-5 card-img  md:w-[50%] lg:w-[50%] xl:w-[40%] h-full p-1 md:p-2 overflow-hidden relative">
               <img src="${card.photo_url}" alt="" class=" w-full h-full object-cover rounded-[10px]">
             </div>
             `;
@@ -522,7 +522,7 @@ function displayRankCard(card) {
     markup += `
         <div
       
-              class="ml-2 card-img  md:w-[120px] lg:w-[140px] xl:w-[40%] h-full p-1 md:p-2 overflow-hidden relative">
+              class="ml-2 card-img  md:w-[50%] lg:w-[50%] xl:w-[40%] h-full p-1 md:p-2 overflow-hidden relative">
               <img src="${card.photo_url}" alt="" class=" w-full h-full object-cover rounded-[10px]">
             </div>
             `;
