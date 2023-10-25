@@ -10,6 +10,11 @@ body {
   /* background-color: gray; */
 }
 
+.fa {
+  margin-left: -12px;
+  margin-right: 8px;
+}
+
 .feas
 {
   background-color: rgba(0, 0, 0, 0.61);
